@@ -1,0 +1,11 @@
+<div class="card m-3 p-5">
+<h2>Lista de Usuários</h2>
+
+<div class="card">
+  <ul class="list-group list-group-flush">
+    {{#each responseModel.data}}
+        <li class="list-group-item">{{nome}}</li>
+    {{/each}}
+  </ul>
+</div>
+</div>
