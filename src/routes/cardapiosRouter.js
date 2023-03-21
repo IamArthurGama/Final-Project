@@ -1,17 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var controler = require("../controllers/usuarioController")
-
-router.get('/', controler.list);
+var controler = require("../controllers/cardapioController")
 
 router.get("/add", (req, res) => {
-    res.render("./admin/usuario/novo")
+    res.render("./admin/usuario/addCardapio")
 })
-
-router.get('/add',(req,res)=>{
-    res.render('./admin/novo')
-})
-
 
 router.post('/add', controler.add);
 router.get('/list',controler.list);

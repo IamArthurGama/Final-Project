@@ -1,7 +1,8 @@
 module.exports = (sequelize, Sequelize) => {
 	const Cardapio = sequelize.define('cardapio', {
-		idLanche: {
+		id: {
 			allowNull: false,
+			autoIncrement: true,
 			primaryKey: true,
 			type: Sequelize.INTEGER
 		},

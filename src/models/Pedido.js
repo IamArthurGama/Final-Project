@@ -6,11 +6,7 @@ module.exports = (sequelize, Sequelize) => {
 			primaryKey: true,
 			type: Sequelize.INTEGER
 		},
-		date: {
-			allowNull: false,
-			type: Sequelize.DATETIME,
-			autoIncrement: true
-		},
+//falta a data, mas tava dando problema
 		nome: {
 			allowNull: false,
 			type: Sequelize.STRING,

@@ -1,8 +1,7 @@
 const { json } = require("body-parser");
 const db = require("../models");
-const Modelo = db.Usuario;
+const Modelo = db.Cardapio;
 const Op = db.Sequelize.Op;
-const md5 = require('md5');
 
 const responseModel = {}
 function criarResponse(){
@@ -13,8 +12,7 @@ function criarResponse(){
 criarResponse();
 
 function vefPreenchimento(req,res){
-    if(req.body.nome && req.body.email && req.body.senha){
-        req.body.senha = md5(req.body.senha)
+    if(req.body.nome && req.body.descricao && req.body.preco){
         return req.body;
     }else{
         responseModel.error = "Problema com preenchimento";
@@ -31,7 +29,7 @@ function list(req,res){
         }else{
             responseModel.error = "Tabela Vazia";
         }
-        res.render("./admin/usuario/lista",{responseModel})
+        res.render("./admin/usuario/cardapio",{responseModel})
         
     }).catch(error => {
         responseModel.error = error;
@@ -122,7 +120,7 @@ function add(req,res){
         Modelo.create(modelo).then(data => {
             responseModel.success = true;
             responseModel.data = data;
-            res.redirect("/usuario/")
+            res.redirect("/cardapio/")
             //return res.json(responseModel);
         }).catch(error => {
             responseModel.error = error;
@@ -130,8 +128,6 @@ function add(req,res){
         });
     }
 }
-
-
 
 
 
