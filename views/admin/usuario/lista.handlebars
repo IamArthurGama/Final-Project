@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col">
-    <h2>Lista de Usuários</h2>  
+    <h2>Lista de Usuários</h2>
   </div>
   <div class="col d-flex flex-row-reverse">
     <a href="/usuario/add" class="btn btn-primary mb-2">Novo</a>
@@ -13,16 +13,16 @@
 <div class="card">
   <ul class="list-group list-group-flush">
     {{#each responseModel.data}}
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col">{{nome}}</div>
-            <div class="col d-flex flex-row-reverse">
-              <a href="/usuario/remove/{{id}}" class="btn btn-danger ms-2">Deletar</a>
-              <a href="/usuario/update/{{id}}" class="btn btn-success ms-2">Editar</a>
-              <a href="/usuario/find/{{id}}" class="btn btn-primary ms-2">Detalhes</a>
-            </div>
-          </div>
-        </li>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col">{{nome}}</div>
+        <div class="col d-flex flex-row-reverse">
+          <a href="/usuario/remove/{{id}}" class="btn btn-danger ms-2">Deletar</a>
+          <a href="/usuario/update/{{id}}" class="btn btn-success ms-2">Editar</a>
+          <a href="/usuario/find/{{id}}" class="btn btn-primary ms-2">Detalhes</a>
+        </div>
+      </div>
+    </li>
     {{/each}}
   </ul>
 </div>

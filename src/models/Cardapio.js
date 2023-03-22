@@ -16,12 +16,8 @@ module.exports = (sequelize, Sequelize) => {
 		},
         preco: {
 			allowNull: false,
-			type: Sequelize.FLOAT,
+			type: Sequelize.STRING,
 		},
-        quantidade: {
-            allowNull: false,
-            type: Sequelize.INTEGER
-        },
         ativo: {
 			allowNull: false,
 			type: Sequelize.BOOLEAN,

@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Final</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Final</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@600;900&display=swap');
-      .container-fluid{
-        background-color: #f81404;
-        margin-top: -10px;
-        padding: 10px ;
-      }
 
-      .navbar-brand{
-        color: rgb(255, 255, 255);
-        font-family: 'Montserrat', sans-serif;
-        padding: 0px 40px 0px 0px;
-        
-        
-      }
+    .container-fluid {
+      background-color: #f81404;
+      margin-top: -10px;
+      padding: 10px;
+    }
 
-      .nav-link{
-        color: rgb(241, 241, 241);
-        font-family: 'Montserrat';
-      }
+    .navbar-brand {
+      color: rgb(255, 255, 255);
+      font-family: 'Montserrat', sans-serif;
+      padding: 0px 40px 0px 0px;
 
-      .nav-item{
-        padding: 0px 5px;
-      }
-    </style>
+
+    }
+
+    .nav-link {
+      color: rgb(241, 241, 241);
+      font-family: 'Montserrat';
+    }
+
+    .nav-item {
+      padding: 0px 5px;
+    }
+  </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div  class="container-fluid">
-    <a class="navbar-brand" href="/">
-      <img src="https://i.pinimg.com/originals/49/ce/a2/49cea23da4cf0e7fe941798a85dd4199.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-      La Boucherie
-    </a>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cardapio/list">Cardápio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/usuario/list">Lista</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cardapio/add">Add cardapio</a>
-        </li>
-      </ul>
-      
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link" href="/usuario/add">Login</a>
-        </li>
-      </ul>
 
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <img src="https://i.pinimg.com/originals/49/ce/a2/49cea23da4cf0e7fe941798a85dd4199.jpg" alt="Logo" width="30"
+          height="24" class="d-inline-block align-text-top">
+        La Boucherie
+      </a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cardapio/list">Cardápio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/usuario/list">Lista</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cardapio/add">Add cardapio</a>
+          </li>
+        </ul>
+
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="/usuario/add">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sobre">Sobre nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/sobre/add">Sobre nós-config</a>
+          </li>
+        </ul>
+
+      </div>
     </div>
-  </div>
-</nav>
-    <div>
+  </nav>
+  <div>
     {{{body}}}
-    </div>
-    
+  </div>
+
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </html>
