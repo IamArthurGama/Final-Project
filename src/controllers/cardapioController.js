@@ -120,7 +120,7 @@ function add(req,res){
         Modelo.create(modelo).then(data => {
             responseModel.success = true;
             responseModel.data = data;
-            res.redirect("/cardapio/")
+            res.redirect("/cardapio/list")
             //return res.json(responseModel);
         }).catch(error => {
             responseModel.error = error;

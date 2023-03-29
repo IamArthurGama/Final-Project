@@ -39,10 +39,18 @@
       margin-bottom: 0%;
       padding: 10px 0px 0px 0px ;
     }
+
+    .navbar{
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+    }
+
   </style>
 </head>
 
 <body>
+  <div>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
@@ -81,6 +89,7 @@
       </div>
     </div>
   </nav>
+  </div>
   <div>
     {{{body}}}
   </div>

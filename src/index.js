@@ -7,6 +7,10 @@ const ip = require("ip").address();
 const protocol = process.env.PROTOCOL || "http"
 const port = process.env.PORT || 3000
 
+//Configuração dos arquivos publicos e estáticos
+const path = require("path");
+app.use(express.static(path.join(__dirname, '../public')));
+
 //Configuração do Body-Parser
 var bodyParser = require('body-parser')
 app.use(bodyParser.json())
