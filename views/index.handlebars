@@ -20,8 +20,10 @@
   }
 
   <!--Card-->
+  
+
   .container {
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -42,6 +44,10 @@
     transition: all .5s;
     box-shadow: #815432 0px 5px 15px;
     margin-top: 25px;
+    margin-bottom: 25px;
+    float: left;
+    margin-right: 25px;
+    
   }
 
   .card:hover {
@@ -128,11 +134,13 @@
     background-color: #f86e04;
     width: 100%;
     padding: 10%;
+    clear: none;
   }
 
   .footer_c {
     background-color: #f86e04;
     margin-bottom: -100px;
+    clear: left;
   }
 </style>
 
@@ -171,10 +179,12 @@
     </button>
   </div>
 
-
-
+<div class="lancamentos">
+  <h2>Laçamentos!!</h2>
+</div>
 
   <div class="container">
+    
     <div class="card">
       <div class="img">
         <span>Lo grande</span>
@@ -193,6 +203,28 @@
       <div class="arrow">
         <span>&#8673</span>
       </div>
+    </div>
+
+
+    <div class="card">
+      <div class="img">
+        <span>Lo grande</span>
+      </div>
+      <div class="content">
+        <span class="title">El grandioso</span>
+        <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+          the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+          electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+          Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+          PageMaker including versions of Lorem Ipsum.
+        </p>
+      </div>
+
+      <div class="arrow">
+        <span>&#8673</span>
+      </div>
+
     </div>
   </div>
 
