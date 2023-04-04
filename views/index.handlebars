@@ -3,30 +3,11 @@
     background-color: rgb(216, 189, 189);
   }
 
-  footer {
-    background-color: #f86e04;
-    width: 100%;
-    padding: 10%;
-  }
 
-  .localizacao {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 3%;
-  }
-
-  .lancamentos {
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-    margin: 3%;
-    background-color: aqua;
-
-  }
 
   body {
     background-color: #e6e6e6;
+    margin: 0;
   }
 
   .div-fix {
@@ -38,11 +19,119 @@
 
   }
 
+  <!--Card-->
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+    background-color: #444;
+
+  }
+
+  .card {
+    background-image: linear-gradient(#f8cb04, #f8a304);
+    overflow: hidden;
+    border-radius: 8px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .5s;
+    box-shadow: #815432 0px 5px 15px;
+    margin-top: 25px;
+  }
+
+  .card:hover {
+    background-image: linear-gradient(#f8cb04, #f8a304);
+  }
+
+  .card .img {
+    background-image: url('/images/AMBURGUI.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 360px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .9;
+    transition: all .5s;
+    z-index: 2;
+  }
+
+  .card:hover .img {
+    opacity: 1;
+    width: 400px;
+  }
+
+  .card .img .span {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 100;
+    text-transform: uppercase;
+  }
+
+  .card .content {
+    padding: 0px 20px;
+    overflow: hidden;
+    height: 0;
+    transition: all .5s;
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  .card:hover .content {
+    padding: 20px;
+    height: 260px;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .card .content p {
+    margin-bottom: 0;
+  }
+
+  .card .content .title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .card .content .desc {
+    font-size: 15px;
+    font-weight: 500;
+    opacity: .7;
+  }
+
+  .card .arrow {
+    padding: 15px;
+    font-size: 28px;
+    transform: rotate(-180deg);
+    transition: all .5;
+  }
+
+  .card:hover .arrow {
+    transform: rotate(0);
+  }
+
+  .card .arrow span {
+    font-size: 24px;
+  }
+
+  <!--Footer-->footer {
+    background-color: #f86e04;
+    width: 100%;
+    padding: 10%;
+  }
+
   .footer_c {
     background-color: #f86e04;
     margin-bottom: -100px;
   }
-
 </style>
 
 <body>
@@ -83,7 +172,23 @@
 
 
 
+  <div class="container">
+    <div class="card">
+      <div class="img">
+        <span>Lo grande</span>
+      </div>
+      <div class="content">
+        <span class="title">El grandioso</span>
+        <p class="desc">O maior lanche do nosso cardápio, se não o da região!!
+          Nele tem 5 carnes, muito queijo e muiiiiiito bacon
+        </p>
+      </div>
 
+      <div class="arrow">
+        <span>&#8673</span>
+      </div>
+    </div>
+  </div>
 
 
 
