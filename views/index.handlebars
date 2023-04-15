@@ -1,7 +1,9 @@
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 </head>
 <style>
   .card-sup {
@@ -34,79 +36,77 @@
 
 
 
- 
-/*Lançamentos*/
+
+  /*Lançamentos*/
 
 
-.lancamentos {
-  padding: 20px;
-  margin: 30px 0px 100px;
-}
+  .lancamentos {
+    padding: 20px;
+    margin: 30px 0px 100px;
+  }
 
-.lancamentos h2{
+  .lancamentos h2 {
     text-align: center;
     color: rgb(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
-    font-weight:100;
+    font-weight: 100;
     font-size: 350%;
     margin-bottom: 15px;
-}
+  }
 
-.lancamentos hr{
-  color: rgb(255, 255, 255);
-  width: 40%;
-  margin: 0px auto 60px auto;
-}
+  .lancamentos hr {
+    color: rgb(255, 255, 255);
+    width: 40%;
+    margin: 0px auto 60px auto;
+  }
 
-.produtos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* centraliza no eixo horizontal */
-  align-items: center; /* centraliza no eixo vertical */
-}
+  .produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* centraliza no eixo horizontal */
+    align-items: center;
+    /* centraliza no eixo vertical */
+  }
 
-.produto {
-  width: 30%;
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid rgb(141, 141, 141);
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  
-}
+  .produto {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgb(141, 141, 141);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 
-.produto img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
+  }
 
-.produto h3 {
-  font-size: 20px;
-  margin: 15px 0 0 2px;
-  color: rgb(212, 212, 212);
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-}
+  .produto img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
 
-.produto p {
-  font-size: 14px;
-  margin: 3px 0 5px;
-  margin-left: 4px;
-  color: rgb(156, 156, 156);
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
-}
+  .produto h3 {
+    font-size: 20px;
+    margin: 15px 0 0 2px;
+    color: rgb(212, 212, 212);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  }
 
-.produto p:last-child {
-  font-weight: bold;
-  color: #f66f6f;
-}
+  .produto p {
+    font-size: 14px;
+    margin: 3px 0 5px;
+    margin-left: 4px;
+    color: rgb(156, 156, 156);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
 
-
-
-
+  .produto p:last-child {
+    font-weight: bold;
+    color: #f66f6f;
+  }
 
 
 
@@ -114,19 +114,71 @@
 
 
 
-/*banner*/
 
-banner {
-  position: relative;
-  width: 100%;
-}
 
-.banner img {
-  display: block;
-  width: 100%;
-  height: auto;
-  background-attachment: fixed;
-}
+
+
+  /*banner*/
+
+  .banner {
+    background-image: url(/images/AAAAAAA\ copy.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .containera {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .banner-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .banner-image {
+    flex-basis: 50%;
+    text-align: center;
+  }
+
+  .banner-image img {
+    max-width: 50%;
+    max-height: 50%;
+    height: auto;
+  }
+
+  .banner-text {
+    flex-basis: 50%;
+    text-align: center;
+    border-left: 1px solid rgb(97, 97, 97);
+    padding-left: 50px;
+  }
+
+  .banner-text h1 {
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: rgb(212, 212, 212);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .banner-text p {
+    font-size: 24px;
+    line-height: 1.5;
+    color: rgb(212, 212, 212);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+  }
+
 
 
 
@@ -137,7 +189,7 @@ banner {
 
 
   /*Footer*/
-  
+
   footer {
     background-color: #f86e04;
     width: 100%;
@@ -150,8 +202,6 @@ banner {
     margin-bottom: -100px;
     clear: left;
   }
-
-
 </style>
 
 <body>
@@ -191,39 +241,54 @@ banner {
   </div>
 
 
-<section class="lancamentos">
-        <h2>Especialidades</h2>
-        <hr>
-        <div class="produtos">
-          <div class="produto">
-            <img src="/images/AAAAAAA.jpg" alt="Pizza">
-            <h3>Pizza Margherita</h3>
-            <p>Tomate, mussarela, manjericão</p>
-            <p>R$ 25,00</p>
-          </div>
-          <div class="produto">
-            <img src="/images/AAAAAAA.jpg" alt="Hamburguer">
-            <h3>Hamburguer</h3>
-            <p>Pão, carne, alface, tomate, queijo</p>
-            <p>R$ 20,00</p>
-          </div>
-          <div class="produto">
-            <img src="/images/AAAAAAA.jpg" alt="Lasanha">
-            <h3>Lasanha à bolonhesa</h3>
-            <p>Carne moída, molho de tomate, massa</p>
-            <p>R$ 30,00</p>
-          </div>
+  <section class="lancamentos">
+    <h2>Especialidades</h2>
+    <hr>
+    <div class="produtos">
+      <div class="produto">
+        <img src="/images/AAAAAAA.jpg" alt="Pizza">
+        <h3>Pizza Margherita</h3>
+        <p>Tomate, mussarela, manjericão</p>
+        <p>R$ 25,00</p>
+      </div>
+      <div class="produto">
+        <img src="/images/AAAAAAA.jpg" alt="Hamburguer">
+        <h3>Hamburguer</h3>
+        <p>Pão, carne, alface, tomate, queijo</p>
+        <p>R$ 20,00</p>
+      </div>
+      <div class="produto">
+        <img src="/images/AAAAAAA.jpg" alt="Lasanha">
+        <h3>Lasanha à bolonhesa</h3>
+        <p>Carne moída, molho de tomate, massa</p>
+        <p>R$ 30,00</p>
+      </div>
+      
+    </div>
+  </section>
+
+
+
+
+
+
+  <div class="banner">
+    <div class="containera">
+      <div class="banner-content">
+        <div class="banner-image">
+          <img src="/images/casa.jpg" alt="Imagem do banner">
         </div>
-      </section>
+        <div class="banner-text">
+          <h1>Venha conhecer a melhor hamburgueria da cidade</h1>
+          <p>Endereço: Rua das Flores, 123, São Paulo</p>
+          <p>Horário de Funcionamento:
+              Segunda a Sexta: 08:00 às 22:00
+            Sábado e Domingo: 10:00 às 20:00</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-
-
-
-
-<div class="banner">
-  <img src="caminho_da_imagem" alt="Descrição da Imagem">
-</div>
 
 
 
