@@ -20,6 +20,5 @@ db.sequelize = sequelize;
 db.Usuario = require("./Usuario")(sequelize, Sequelize);
 db.Cardapio = require("./Cardapio")(sequelize, Sequelize);
 db.Pedido = require("./Pedido")(sequelize, Sequelize);
-db.Sobre = require("./Sobre")(sequelize, Sequelize);
 
 module.exports = db;
