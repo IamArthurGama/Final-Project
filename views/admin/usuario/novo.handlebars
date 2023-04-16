@@ -1,3 +1,64 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: #1a1a1a;
+        margin: 0;
+    }
+
+    .card {
+        background-color: #1a1a1a;
+        border: 1px solid rgb(141, 141, 141);
+        color: rgb(255, 255, 255);
+        font-family: 'Montserrat', sans-serif;
+        font-style: italic;
+    }
+
+    .card h2 {
+        margin: 10px 0px 30px;
+        font-size: 350%;
+        font-weight: 100;
+    }
+
+    .card label {
+        font-weight: 400;
+        font-style: normal;
+        color: rgb(230, 230, 230);
+    }
+
+    .card input {
+        background-color: rgb(177, 177, 177);
+    }
+
+    .card input::placeholder {
+        font-weight: 500;
+    }
+
+    /*.card input:{
+    
+        QUERO TIRAR A COR AZUL
+
+    }*/
+
+    .div-fix {
+        position: static;
+        margin-top: 75px;
+    }
+
+    h3 {
+        margin: 35px 0px 0px;
+        font-size: 18px;
+
+    }
+</style>
+
+<div class="div-fix"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
+
 <div class="card m-3 p-5">
     <h2>Cadastro de Usuário</h2>
     <br>
@@ -30,4 +91,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
+
+    <h3>Já tem cadastro? <a href="#">Venha fazer login!</a></h3>
+
 </div>
