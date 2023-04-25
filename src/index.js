@@ -35,9 +35,6 @@ app.get("/", (req, res) => {
 const usuario = require("./routes/usuariosRouter")
 app.use('/usuario/', usuario);
 
-const cardapio = require("./routes/cardapiosRouter")
-app.use('/cardapio/', cardapio);
-
 
 //Esta rota tem que ser a última.
 app.use((req, res) => {

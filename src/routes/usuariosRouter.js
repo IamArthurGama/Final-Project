@@ -8,8 +8,13 @@ router.get("/add", (req, res) => {
     res.render("./admin/usuario/novo")
 })
 
-router.get('/add', (req, res) => {
-    res.render('./admin/novo')
+
+router.get('/cardapio', (req, res) => {
+    res.render('./admin/usuario/cardapio')
+})
+
+router.get('/login', (req, res) => {
+    res.render('./admin/usuario/login')
 })
 
 router.get('/sobre', (req, res) => {
