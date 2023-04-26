@@ -4,13 +4,14 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+
+
+
 </head>
 <style>
   .card-sup {
     background-color: rgb(216, 189, 189);
   }
-
-
 
   body {
     background-color: #1a1a1a;
@@ -18,24 +19,13 @@
   }
 
   .div-fix {
-    background-color: #043df8;
+    background-color: #f86e04;
     /*width: 100%;*/
 
     position: static;
     margin-top: 53px;
+    margin-bottom: 5.5%;
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
   /*Lançamentos*/
 
@@ -43,6 +33,7 @@
   .lancamentos {
     padding: 20px;
     margin: 30px 0px 100px;
+    width: 100%;
   }
 
   .lancamentos h2 {
@@ -108,16 +99,6 @@
     color: #f66f6f;
   }
 
-
-
-
-
-
-
-
-
-
-
   /*banner*/
 
   .banner {
@@ -128,11 +109,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
 
   .containera {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 20px;
   }
@@ -179,125 +161,44 @@
     font-weight: 200;
   }
 
+  /*Mapa*/
 
+  .mapa {
+    width: 90%;
+    height: 390px;
+    display: block;
 
+  }
 
+  /*Sobre nós*/
 
+  .sobre-nos p {
+    font-size: 24px;
+    line-height: 1.5;
+    max-width: 1000px;
+    margin: 20px auto;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: rgb(212, 212, 212);
+    text-align: justify;
+  }
 
+  .sobre-nos {
+    margin: 60px 0px;
 
+    text-align: center;
+  }
 
-
-/*Mapa*/
-
-
-.map-responsive{
-
-    overflow:hidden;
-
-    padding-bottom:56.25%;
-
-    position:relative;
-
-    height:0;
-
-}
-
-.map-responsive iframe{
-
-    left:0;
-
-    top:0;
-
-    height:100%;
-
-    width:100%;
-
-    position:absolute;
-
-}
-#map {
-
-    width: 100%;
-
-    height: 400px;
-
-    background-color: grey;
-
-}
-
-
-
-
-
-
-
-
-
- /*Sobre nós*/
-
-    .sobre-nos {
-        width: 100%;
-        height: 600px;
-        background-color: #f86e04;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        margin: 200px 0px 200px ;
-      }
-
-      .sobre-nos:before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.4);
-        z-index: 1;
-      }
-
-      .sobre-nos-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        color: #fff;
-        text-align: center;
-      }
-
-      .sobre-nos-content h1 {
-        font-size: 50px;
-        margin: 10px 0 50px;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 400;
-        color: rgb(212, 212, 212);
-      }
-
-      .sobre-nos-content p {
-        font-size: 24px;
-        line-height: 1.5;
-        max-width: 1000px;
-        margin:20px auto;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 300;
-        color: rgb(212, 212, 212);
-      }
-
-    .sobre{
-      background-color: #b14d00;
-      font-size: 50px;
-        margin: 150px 0 50px;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 600;
-        color: rgb(212, 212, 212);
-        text-align: center;
-        padding: 50px;
-    }
-
-
-
+  .sobre {
+    background-color: #f86e04;
+    font-size: 50px;
+    margin: 150px 0 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: rgb(240, 240, 240);
+    text-align: center;
+    padding: 50px;
+  }
 
   /*Footer*/
 
@@ -312,6 +213,97 @@
     background-color: #f86e04;
     margin-bottom: -100px;
     clear: left;
+  }
+
+  /* Estilos padrão */
+
+  /* Adicione a seguinte regra de media query para telas menores que 768px */
+  @media only screen and (max-width: 768px) {
+    .lancamentos h2 {
+      font-size: 250%;
+    }
+
+    .produto {
+      width: 45%;
+    }
+
+    .produto h3 {
+      font-size: 18px;
+    }
+
+    .produto p {
+      font-size: 12px;
+    }
+
+    .banner-image {
+      flex-basis: 100%;
+      margin-bottom: 20px;
+    }
+
+    .banner-text {
+      flex-basis: 100%;
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .banner-text h1 {
+      font-size: 32px;
+    }
+
+    .banner-text p {
+      font-size: 18px;
+    }
+
+    .mapa {
+      height: 300px;
+    }
+  }
+
+  /* Adicione a seguinte regra de media query para telas menores que 480px */
+  @media only screen and (max-width: 480px) {
+    .lancamentos h2 {
+      font-size: 200%;
+    }
+
+    .produto {
+      width: 80%;
+      margin-right: 8%;
+    }
+
+    .produto h3 {
+      font-size: 16px;
+    }
+
+    .produto p {
+      font-size: 10px;
+    }
+
+    .banner-text h1 {
+      font-size: 24px;
+    }
+
+    .banner-text p {
+      font-size: 16px;
+    }
+
+    .mapa {
+      height: 200px;
+    }
+  }
+
+  /* Estilos para telas menores */
+  @media only screen and (max-width: 600px) {
+    .sobre-nos {
+      padding: 50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .mapa {
+      display: flex;
+      justify-content: center;
+      margin-left: 5%;
+    }
   }
 </style>
 
@@ -351,8 +343,7 @@
     </button>
   </div>
 
-
-  <section class="lancamentos">
+  <div class="lancamentos">
     <h2>Especialidades</h2>
     <hr>
     <div class="produtos">
@@ -374,55 +365,48 @@
         <p>Carne moída, molho de tomate, massa</p>
         <p>R$ 30,00</p>
       </div>
-      
+
     </div>
-  </section>
-
-
-
-
-
+  </div>
 
   <div class="banner">
     <div class="containera">
       <div class="banner-content">
         <div class="banner-image">
-          <img src="/images/casa.jpg" alt="Imagem do banner">
+          <iframe class="mapa"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29482.02832927548!2d-44.1369587!3d-22.5321732!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9e9901f7f396c9%3A0x740b9d2c32a9a2fa!2sSupermercados%20Nagumo%20-%20Ponte%20Alta!5e0!3m2!1spt-BR!2sbr!4v1682546588631!5m2!1spt-BR!2sbr"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="banner-text">
           <h1>Venha conhecer a melhor hamburgueria da cidade</h1>
           <p>Endereço: Rua das Flores, 123, São Paulo</p>
           <p>Horário de Funcionamento:
-              Segunda a Sexta: 08:00 às 22:00
+            Segunda a Sexta: 08:00 às 22:00
             Sábado e Domingo: 10:00 às 20:00</p>
         </div>
       </div>
     </div>
   </div>
 
-<div class="map-responsive">
+  <section id="sobre-nos">
+    <h1 class="sobre">Sobre nós</h1>
 
-<iframe src=”https://22.5386502,-44.1939787,14z” width=”100%” height=”100%” frameborder=”0” style=”border:0” allowfullscreen></iframe>
+    <div class="sobre-nos">
 
-</div>
+      <p>La Boucherie é uma hamburgueria que se dedica a oferecer aos seus clientes a melhor experiência em
+        hambúrgueres.
+        Com uma seleção cuidadosa dos melhores ingredientes e a preocupação constante com a qualidade e sabor dos
+        pratos,
+        a La Boucherie é uma escolha certa para quem busca uma refeição deliciosa.</p>
+      <p>O ambiente da hamburgueria é acolhedor e descontraído, perfeito para um jantar em família, uma saída com amigos
+        ou até mesmo uma reunião de negócios informal.</p>
+      <p>Com uma equipe de profissionais atenciosos e experientes, a La Boucherie busca sempre oferecer o melhor
+        atendimento e garantir que seus clientes se sintam em casa.</p>
+      <p>Venha experimentar os deliciosos hambúrgueres da La Boucherie e descubra por que ela é uma das melhores
+        hamburguerias da cidade!</p>
 
-<h1 class="sobre">Sobre nós</h1>
-
-<div class="sobre-nos">
-      <div class="sobre-nos-content">
-      </div>
-      <p>La Boucherie é uma hamburgueria que se dedica a oferecer aos seus clientes a melhor experiência em hambúrgueres. Com uma seleção cuidadosa dos melhores ingredientes e a preocupação constante com a qualidade e sabor dos pratos, a La Boucherie é uma escolha certa para quem busca uma refeição deliciosa.</p>
-        <p>O ambiente da hamburgueria é acolhedor e descontraído, perfeito para um jantar em família, uma saída com amigos ou até mesmo uma reunião de negócios informal.</p>
-        <p>Com uma equipe de profissionais atenciosos e experientes, a La Boucherie busca sempre oferecer o melhor atendimento e garantir que seus clientes se sintam em casa.</p>
-        <p>Venha experimentar os deliciosos hambúrgueres da La Boucherie e descubra por que ela é uma das melhores hamburguerias da cidade!</p>
     </div>
-
-
-
-
-
-
-
+  </section>
 
   <div class="footer_c">
     <div class="container">
@@ -434,28 +418,9 @@
           <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
         </ul>
-        <p class="text-center text-muted">© 2022 Company, Inc</p>
+        <p class="text-center text-muted">© 2023 Company, Inc</p>
       </footer>
     </div>
   </div>
+
 </body>
-<script>
-
-    function initMap() {
-
-      var macc = {lat: 42.1382114, lng: -71.5212585};
-
-      var map = new google.maps.Map(
-
-          document.getElementById('map'), {zoom: 15, center: macc});
-
-      var marker = new google.maps.Marker({position: macc, map: map});
-
-    }
-
- </script>
- <script async defer
-
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-
-    </script>
