@@ -1,0 +1,24 @@
+<h2>{{response.titulo}}</h2>
+<form action="" method="POST"> 
+    <hr>
+        <label for="nome" class="form-label">Nome:</label>
+        <input type="text" name="nome" id="nome" class="form-control" 
+            placeholder="Digite aqui o Nome do Usuário" value="{{response.data.nome}}"/><br/>
+        
+        <label for="nome" class="form-label">Login:</label>
+        <input type="text" name="login" id="login" class="form-control"
+            placeholder="Digite aqui o Login do Usuário" value="{{response.data.login}}"/><br/>
+
+            <input class="form-check-input"  type="checkbox" id="ativo" name="ativo"
+            {{#if response.data.ativo}}
+                checked
+            {{/if}}>
+        
+        <label for="ativo" class="form-label">Usuário ativo</label>
+
+        <br/>
+
+        <button type="submit" class="btn btn-success">Salvar</button>
+        
+        <a href="/usuario" class="btn btn-danger">Cancelar</a>
+</form>

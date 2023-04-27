@@ -18,7 +18,25 @@ function vefPreenchimento(req,res){
         return req.body;
     }else{
         responseModel.error = "Problema com preenchimento";
-        res.json(responseModel);
+        req.flash("error_msg", "Problema com preenchimento.")
+        res.redirect("/usuario/add")
+    }
+}
+
+function vefPreenchimentoEditar(req, res) {
+
+    if (req.body.ativo) {
+        req.body.ativo = true
+    } else {
+        req.body.ativo = false
+    }
+
+    if (req.body.nome && req.body.email) {
+        return req.body;
+    } else {
+        responseModel.error = "Problema com preenchimento";
+        req.flash("error_msg", "Problema com preenchimento.")
+        res.redirect("/usuario")
     }
 }
 
@@ -39,23 +57,47 @@ function list(req,res){
     });
 }
 
-function findById(req,res){
+function findById(req, res) {
     criarResponse();
     const id = req.params.id;
     Modelo.findByPk(id).then(data => {
-        if(data){
+        if (data) {
             responseModel.success = true;
-            responseModel.data = data;
-            return res.json(responseModel);
-        }else{
-            responseModel.error = "Nenhuma informação foi encontada!";
-            return res.json(responseModel);
+            responseModel.data = JSON.parse(JSON.stringify(data));
+            res.render("admin/usuario/detalhe", { response: responseModel })
+        } else {
+            responseModel.error = "Nenhuma informação foi encontrada!";
+            req.flash("error_msg", "Nenhuma informação foi encontrada.")
+            res.redirect("/usuario")
         }
-        
+
     }).catch(error => {
         responseModel.error = error;
-        return res.json(responseModel);
+        req.flash("error_msg", "Nenhuma informação foi encontrada.")
+        res.redirect("/usuario")
     });
+}
+
+function telaRemove(req, res) {
+    criarResponse();
+    const id = req.params.id;
+    Modelo.findByPk(id).then(data => {
+        if (data) {
+            responseModel.success = true;
+            responseModel.data = JSON.parse(JSON.stringify(data));
+            res.render("admin/usuario/delete", { response: responseModel })
+        } else {
+            responseModel.error = "Nenhuma informação foi encontrada!";
+            req.flash("error_msg", "Nenhuma informação foi encontrada.")
+            res.redirect("/usuario")
+        }
+
+    }).catch(error => {
+        responseModel.error = error;
+        req.flash("error_msg", "Nenhuma informação foi encontrada.")
+        res.redirect("/usuario")
+    });
+
 }
 
 function update(req,res){
@@ -115,6 +157,13 @@ function remove(req,res){
     });    
 }
 
+function telaAdd(req, res) {
+    criarResponse();
+    responseModel.success = true;
+    responseModel.titulo = "Cadastro de Usuários"
+    res.render("admin/usuario/novo", { response: responseModel });
+}
+
 function add(req,res){
     criarResponse();
     modelo = vefPreenchimento(req,res);
@@ -131,8 +180,65 @@ function add(req,res){
     }
 }
 
+function telaEditar(req, res) {
+    criarResponse();
+    const id = req.params.id;
+    Modelo.findByPk(id).then(data => {
+        if (data) {
+            responseModel.success = true;
+            responseModel.data = JSON.parse(JSON.stringify(data));
+            res.render("admin/usuario/editar", { response: responseModel })
+        } else {
+            responseModel.error = "Nenhuma informação foi encontrada!";
+            req.flash("error_msg", "Nenhuma informação foi encontrada.")
+            res.redirect("/usuario")
+        }
+
+    }).catch(error => {
+        responseModel.error = error;
+        req.flash("error_msg", "Nenhuma informação foi encontrada.")
+        res.redirect("/usuario")
+    });
+}
+
+function telaLogin(req, res) {
+    criarResponse()
+    responseModel.titulo = "Login de Usuários"
+    res.render("admin/usuario/login", { response: responseModel })
+}
+
+function login(req, res) {
+    criarResponse()
+    Modelo.findAll({
+        where: {
+            email: req.body.email,
+            senha: md5(req.body.senha),
+            ativo: true
+        }
+    }).then(data => {
+        if (data.length > 0) {
+            responseModel.success = true
+            responseModel.data = JSON.parse(JSON.stringify(data))
+            req.session.user = responseModel.data[0]
+            res.redirect("/")
+        } else {
+            responseModel.error = "Login ou senha incorretos!";
+            req.flash("error_msg", "Login ou senha incorretos!")
+            res.redirect("/usuario/login")
+        }
+    }).catch(error => {
+        responseModel.error = error;
+        req.flash("error_msg", "Login ou senha incorretos!")
+        res.redirect("/usuario/login")
+    })
+}
+
+function logout(req, res){
+    req.session.destroy()
+    res.redirect("/")
+}
 
 
 
 
-module.exports = { list, findById, add, update, remove}
+module.exports = { list, findById, add, update, remove, telaAdd, telaRemove, telaEditar, telaLogin, login, logout }
