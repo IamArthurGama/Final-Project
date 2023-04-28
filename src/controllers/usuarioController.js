@@ -238,7 +238,51 @@ function logout(req, res){
     res.redirect("/")
 }
 
+function telaSenha(req, res) {
+    criarResponse()
+    responseModel.titulo = "Mudança de senha"
+    responseModel.data = req.session.user
+    res.render("admin/usuario/senha", { response: responseModel })
+}
+
+function senha(req, res) {
+    criarResponse()
+    if(!req.body.senhaA && !req.body.senhaN && !req.body.senhaR){
+        req.flash("error_msg","Alguma senha não foi preenchida!")
+        res.redirect("/usuario/senha")
+    }else{
+        modelo = req.session.user
+
+        const senhaA = md5(req.body.senhaA)
+        const senhaN = md5(req.body.senhaN)
+        const senhaR = md5(req.body.senhaR)
+
+        if (modelo.senha != senhaA){
+            req.flash("error_msg","Alguma senha não foi preenchida!")
+            res.redirect("/usuario/senha")
+        }else if(senhaN != senhaR){
+            req.flash("error_msg","A senha não é igual a repetição!")
+            res.redirect("/usuario/senha")
+        }else{
+            modelo.senha = senhaN
+            Modelo.update(modelo,{
+                where:{
+                    id:modelo.id
+                }
+            }).then(() => {
+                req.flash("success_msg","Senha alterada com sucesso!")
+                res.redirect("/")
+            }).catch((error) => {
+                responseModel.error = error
+                req.flash("error_msg","Não foi possivel alterar a senha!")
+                res.redirect("/usuario/senha")
+            })
+        }
+    }
+}
 
 
 
-module.exports = { list, findById, add, update, remove, telaAdd, telaRemove, telaEditar, telaLogin, login, logout }
+
+
+module.exports = { list, findById, add, update, remove, telaAdd, telaRemove, telaEditar, telaLogin, login, logout, telaSenha, senha }

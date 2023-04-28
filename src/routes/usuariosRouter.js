@@ -9,8 +9,8 @@ router.get('/cardapio', (req, res) => {
     res.render('./admin/usuario/cardapio')
 })
 
-router.get('/add', util.vef,controler.telaAdd);
-router.post('/add', util.vef, controler.add);
+router.get('/add',controler.telaAdd);
+router.post('/add',controler.add);
 
 router.get('/list', util.vef,controler.list);
 router.get('/find/:id', util.vef, controler.findById);
@@ -22,5 +22,8 @@ router.post('/remove/:id', util.vef, controler.remove);
 router.get("/login",controler.telaLogin)
 router.post("/login",controler.login)
 router.get("/logout",controler.logout)
+
+router.get("/senha", util.vef, controler.telaSenha)
+router.post("/senha", util.vef, controler.senha)
 
 module.exports = router;
