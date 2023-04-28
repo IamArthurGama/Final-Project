@@ -4,6 +4,91 @@
         position: static;
         margin-top: 75px;
     }
+
+    body {
+        background-color: #1a1a1a;
+      }
+
+     .cardapio img {
+        width: 30px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .cardapio {
+        margin: 100px auto;
+        max-width: 800px;
+        width: 100%;
+        padding: 20px;
+      }
+
+    .cardapio p {
+       color: rgb(178, 178, 178);
+       margin: -10px 0px ;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+
+     .cardapio h1  {
+        text-align: center;
+        font-size: 20px;
+        margin: 0px 0px 50px;
+        color: rgb(255, 255, 255);;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .cardapio h3{
+       text-align: center;
+        font-size: 50px;
+        margin: 0px 0px 90px;
+        color: rgb(255, 255, 255);;
+        font-weight: 200;
+        font-family: 'Montserrat', sans-serif; 
+      }
+
+
+
+
+
+
+.produto {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid rgb(141, 141, 141);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .produto img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+  }
+
+  .produto h3 {
+    font-size: 20px;
+    margin: 15px 0 0 2px;
+    color: rgb(212, 212, 212);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  }
+
+  .produto p {
+    font-size: 14px;
+    margin: 3px 0 5px;
+    margin-left: 4px;
+    color: rgb(156, 156, 156);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+
+  .produto p:last-child {
+    font-weight: bold;
+    color: #f66f6f;
+  }
+
   </style>
 </head>
 
@@ -13,32 +98,22 @@
 
 
 
-<div class="row">
-  <div class="col">
-    <h2>Cardápio</h2>
-  </div>
-</div>
+<div class="cardapio">
+       <img src="/images/hamburger.png" alt=""> 
+      <h1 class="logo">La Boucherie</h1> 
 
+        <h3>Cardápio</h3>
 
-
-
-<div class="card">
-  <ul class="list-group list-group-flush">
-    {{#each responseModel.data}}
-    <li class="list-group-item">
-      <div class="row">
-        <div class="col">{{nome}}</div>
-        <div class="col">{{descricao}}</div>
-        <div class="col">{{preco}}</div>
-        <div class="col d-flex flex-row-reverse">
-          <a href="/cardapio/remove/{{id}}" class="btn btn-danger ms-2">Deletar</a>
-          <a href="/cardapio/update/{{id}}" class="btn btn-success ms-2">Editar</a>
-          <a href="/cardapio/find/{{id}}" class="btn btn-primary ms-2">Detalhes</a>
-          <input type="number" name="quantidade{{id}}" class="form-control" id="formGroupExampleInput">
-
-        </div>
+        <section>
+          <div class="produto">
+        <img src="/images/AAAAAAA.jpg" alt="Pizza">
+        <h3>Pizza Margherita</h3>
+        <p>Tomate, mussarela, manjericão</p>
+        <p>R$ 25,00</p>
       </div>
-    </li>
-    {{/each}}
-  </ul>
+        </section>
+
+     
+
+    </div>
 </div>
