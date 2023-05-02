@@ -171,7 +171,7 @@ function add(req,res){
         Modelo.create(modelo).then(data => {
             responseModel.success = true;
             responseModel.data = data;
-            res.redirect("/usuario/")
+            res.redirect("/usuario/login")
             //return res.json(responseModel);
         }).catch(error => {
             responseModel.error = error;

@@ -50,7 +50,6 @@ app.get("/", (req, res)=> {
     responseModel = {}
     responseModel.success = true;
     responseModel.titulo = process.env.NOME
-    req.flash("success_msg", "Foi tudo certo")
     res.render("index",{response: responseModel});  
 })
 
