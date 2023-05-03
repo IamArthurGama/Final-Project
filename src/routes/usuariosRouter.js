@@ -9,6 +9,12 @@ router.get('/cardapio', (req, res) => {
     res.render('./admin/usuario/cardapio')
 })
 
+router.get('/perfil', (req, res) => {
+    res.render('./admin/usuario/perfil')
+})
+
+
+
 router.get('/add',controler.telaAdd);
 router.post('/add',controler.add);
 
