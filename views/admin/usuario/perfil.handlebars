@@ -1,45 +1,48 @@
 <body>
-    <div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
-	<main>
-		<section>
+	<div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
+
+
+	<form action="" method="POST">
+		<div class="cadastro">
+
 			<h3>Informações pessoais</h3>
-			<ul>
-				<li><strong>Nome:</strong> Fulano de Tal</li>
-				<li><strong>Email:</strong> fulano@gmail.com</li>
-				<li><strong>Telefone:</strong> (11) 1234-5678</li>
-				<li><strong>Endereço:</strong> Rua X, 123 - São Paulo/SP</li>
-			</ul>
-			<a href="#">Editar informações</a>
-		</section>
-		<section>
-			<h3>Histórico de pedidos</h3>
-			<table>
-				<thead>
-					<tr>
-						<th>Data</th>
-						<th>Itens</th>
-						<th>Total</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>01/05/2023</td>
-						<td>Pizza de Calabresa, Refrigerante 2L</td>
-						<td>R$ 35,00</td>
-					</tr>
-					<tr>
-						<td>28/04/2023</td>
-						<td>Pizza Marguerita, Coca-cola 600ml</td>
-						<td>R$ 30,00</td>
-					</tr>
-					<tr>
-						<td>24/04/2023</td>
-						<td>Pizza Quatro Queijos</td>
-						<td>R$ 25,00</td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="#">Ver todos os pedidos</a>
-		</section>
-	</main>
+			<h2>{{response.titulo}}</h2>
+
+
+			<div class="form-group">
+				<input type="text" name="nome" id="nome" placeholder="Digite seu nome completo"
+					value="{{response.data.nome}}">
+			</div>
+			<div class="form-group">
+				<input type="text" name="telefone" id="telefone" placeholder="Digite seu telefone"
+					value="{{response.data.telefone}}">
+			</div>
+			<div class="form-group">
+				<input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço"
+					value="{{response.data.endereco}}">
+			</div>
+			<div class="form-group">
+				<input type="email" id="email" name="email" placeholder="Digite seu e-mail"
+					value="{{response.data.email}}">
+				<div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com ninguém.</div>
+			</div>
+
+			<input class="form-check-input" type="checkbox" id="ativo" name="ativo" {{#if response.data.ativo}} checked
+				{{/if}}>
+
+			<label for="ativo" class="form-label">Usuário ativo</label>
+
+			<br />
+
+			<button type="submit" class="btn btn-success">Salvar</button>
+
+			<a href="/usuario" class="btn btn-danger">Cancelar</a>
+
+		</div>
+	</form>
+
+	<section>
+		<h3>Histórico de pedidos</h3>
+		
+	</section>
 </body>
