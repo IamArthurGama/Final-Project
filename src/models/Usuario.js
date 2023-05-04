@@ -26,6 +26,11 @@ module.exports = (sequelize, Sequelize) => {
 			allowNull: false,
 			type: Sequelize.STRING,
 		},
+		ativoAdm: {
+			allowNull: false,
+			type: Sequelize.BOOLEAN,
+            defaultValue:false,
+		},
         ativo: {
 			allowNull: false,
 			type: Sequelize.BOOLEAN,
