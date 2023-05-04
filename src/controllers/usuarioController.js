@@ -219,6 +219,7 @@ function login(req, res) {
         if (data.length > 0) {
             responseModel.success = true
             responseModel.data = JSON.parse(JSON.stringify(data))
+            responseModel.data.ativoAdm = responseModel.data.ativoAdm == 1?true:false
             req.session.user = responseModel.data[0]
             res.redirect("/")
         } else {
