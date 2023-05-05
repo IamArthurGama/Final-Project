@@ -451,6 +451,49 @@ padding: 0.25rem 0.5rem;
 color: rgb(255, 255, 255);
 }
 
+/*EDITAR*/
+
+.form-label-editar{
+  margin: 12px 0px;
+  
+  
+}
+
+.form-label-editar p strong{
+  font-size: 16px;
+  color: #f86e04;
+  font-weight: 400;
+    font-family: 'Montserrat', sans-serif; 
+  
+
+}
+
+/*LISTA*/
+
+.list-group-item{
+  background-color: #282828;
+  margin: 5px 2px;
+  border-bottom: transparent;
+}
+
+.col{
+  color: rgb(255, 255, 255);
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.lista {
+    margin: 100px auto 0px;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+}
+
+.lista btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  color: rgb(255, 255, 255);
+  }
 
 
 
@@ -587,3 +630,14 @@ color: rgb(255, 255, 255);
 
 /*PERFIL*/
 
+p {
+  color: rgb(255, 255, 255);;
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+label p {
+  color: rgb(255, 255, 255);;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif; 
+}

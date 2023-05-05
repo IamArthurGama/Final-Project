@@ -1,24 +1,48 @@
-<h2>{{response.titulo}}</h2>
-<form action="" method="POST"> 
-    <hr>
-        <label for="nome" class="form-label">Nome:</label>
-        <input type="text" name="nome" id="nome" class="form-control" 
-            placeholder="Digite aqui o Nome do Usuário" value="{{response.data.nome}}"/><br/>
-        
-        <label for="nome" class="form-label">Login:</label>
-        <input type="text" name="login" id="login" class="form-control"
-            placeholder="Digite aqui o Login do Usuário" value="{{response.data.login}}"/><br/>
+<div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
+<div class="lista" style="margin-bottom: 0px;">
+    <h3>Edição de Cadastro</h3>
+</div>
+<div class="cadastro" style="margin-top: 0px;">
+    <form method="POST">
+        <hr>
+        <div class="form-group"> <div class="form-label-editar">
+                <p><strong>Nome:</strong></p>
+            </div>
+            <input type="text" name="nome" id="nome" placeholder="Digite aqui o novo nome do Usuário"
+                value="{{response.data.nome}}" /><br />
+        </div>
 
-            <input class="form-check-input"  type="checkbox" id="ativo" name="ativo"
-            {{#if response.data.ativo}}
-                checked
+        <div class="form-group">
+            <div for="nome" class="form-label-editar">
+                <p><strong> E-mail:</strong></p>
+            </div>
+            <input type="text" name="email" id="email" placeholder="Digite aqui o novo email"
+                value="{{response.data.email}}" /><br />
+        </div>
+
+        <div class="form-group">
+            <div for="nome" class="form-label-editar">
+                <p><strong>Telefone:</strong></p>
+            </div>
+            <input type="text" name="telefone" id="telefone" placeholder="Digite aqui o novo telefone"
+                value="{{response.data.telefone}}" /><br />
+        </div>
+        <div class="form-group">
+            <div for="nome" class="form-label-editar">
+                <p><strong> Endereço:</strong></p>
+            </div>
+            <input type="text" name="endereco" id="endereco" placeholder="Digite aqui o novo endereço"
+                value="{{response.data.endereco}}" /><br />
+        </div>
+        <input class="form-check-input" type="checkbox" id="ativo" name="ativo" {{#if response.data.ativo}} checked
             {{/if}}>
-        
-        <label for="ativo" class="form-label">Usuário ativo</label>
 
-        <br/>
+        <div for="ativo" class="form-div">Usuário ativo</div>
+
+        <br />
 
         <button type="submit" class="btn btn-success">Salvar</button>
-        
+
         <a href="/usuario" class="btn btn-danger">Cancelar</a>
-</form>
+    </form>
+</div>
