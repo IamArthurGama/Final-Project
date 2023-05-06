@@ -1,6 +1,8 @@
-<h2>{{response.titulo}}</h2>
+<div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
+<div class="lista" style="margin: 0px 0px"></div><h3>Dados do Usuário</h3></div>
 <hr>
-<div class="m-3">
+<div>
+<div class="detalhe">
     <p><strong>Nome:</strong>&nbsp;&nbsp;{{response.data.nome}}</p>
     <p><strong>Login:</strong>&nbsp;&nbsp;{{response.data.email}}</p>
     <p><strong>Telefone:</strong>&nbsp;&nbsp;{{response.data.telefone}}</p>
@@ -8,6 +10,7 @@
     <p><strong>Ativo:</strong>&nbsp;&nbsp;{{response.data.ativo}}</p>
     <p><strong>Criado em:</strong>&nbsp;&nbsp;{{response.data.createdAt}}</p>
     <p><strong>Alterado em:</strong>&nbsp;&nbsp;{{response.data.updatedAt}}</p>
+    <a href="/usuario" class="btn btn-success" style="margin-top: 10px;">Voltar</a>
 </div>
 <hr>
-<a href="/usuario" class="btn btn-success">Voltar</a>
+

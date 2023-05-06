@@ -2,51 +2,16 @@
 	<div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
 
 
-	<form action="" method="POST">
-		<div class="cadastro">
-
-			<h3>Informações pessoais</h3>
-			<h2>{{response.titulo}}</h2>
-
-
-			<div class="form-group">
-				<p><strong>Nome:</strong>&nbsp;&nbsp;{{response.data.nome}}</p>
-				<input type="text" name="nome" id="nome" placeholder="Digite seu nome completo"
-					value="{{response.data.nome}}">
-			</div>
-			<div class="form-group">
-				<p><strong>Telefone:</strong>&nbsp;&nbsp;{{response.data.telefone}}</p>
-				<input type="text" name="telefone" id="telefone" placeholder="Digite seu telefone"
-					value="{{response.data.telefone}}">
-			</div>
-			<div class="form-group">
-				<p><strong>Endereço:</strong>&nbsp;&nbsp;{{response.data.endereco}}</p>
-				<input type="text" name="endereco" id="endereco" placeholder="Digite seu endereço"
-					value="{{response.data.endereco}}">
-			</div>
-			<div class="form-group">
-				<p><strong>Login:</strong>&nbsp;&nbsp;{{response.data.email}}</p>
-				<input type="email" id="email" name="email" placeholder="Digite seu e-mail"
-					value="{{response.data.email}}">
-				<div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com ninguém.</div>
-			</div>
-
-			<input class="form-check-input" type="checkbox" id="ativo" name="ativo" {{#if response.data.ativo}} checked
-				{{/if}}>
-
-			<label for="ativo" class="form-label">Usuário ativo</label>
-
-			<br />
-
-			<button type="submit" class="btn btn-success">Salvar</button>
-
-			<a href="/usuario" class="btn btn-danger">Cancelar</a>
-
-		</div>
-	</form>
-
-	<section>
-		<h3>Histórico de pedidos</h3>
-		
-	</section>
-</body>
+	<div class="lista" style="margin: 0px 0px"></div><h3>Dados do Usuário</h3></div>
+<hr>
+<div>
+<div class="detalhe">
+    <p><strong>Nome:</strong>&nbsp;&nbsp;{{response.data.nome}}</p>
+    <p><strong>Login:</strong>&nbsp;&nbsp;{{response.data.email}}</p>
+    <p><strong>Telefone:</strong>&nbsp;&nbsp;{{response.data.telefone}}</p>
+    <p><strong>Endereço:</strong>&nbsp;&nbsp;{{response.data.endereco}}</p>
+    <p><strong>Ativo:</strong>&nbsp;&nbsp;{{response.data.ativo}}</p>
+    <p><strong>Criado em:</strong>&nbsp;&nbsp;{{response.data.createdAt}}</p>
+    <p><strong>Alterado em:</strong>&nbsp;&nbsp;{{response.data.updatedAt}}</p>
+    <a href="/usuario" class="btn btn-success" style="margin-top: 10px;">Voltar</a>
+</div></body>

@@ -1,11 +1,12 @@
 <div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
 <div class="lista" style="margin-bottom: 0px;">
-    <h3>Edição de Cadastro</h3>
+    <h3>Atualização de Cadastro de {{response.data.nome}}</h3>
 </div>
 <div class="cadastro" style="margin-top: 0px;">
     <form method="POST">
         <hr>
-        <div class="form-group"> <div class="form-label-editar">
+        <div class="form-group">
+            <div class="form-label-editar">
                 <p><strong>Nome:</strong></p>
             </div>
             <input type="text" name="nome" id="nome" placeholder="Digite aqui o novo nome do Usuário"
@@ -34,10 +35,11 @@
             <input type="text" name="endereco" id="endereco" placeholder="Digite aqui o novo endereço"
                 value="{{response.data.endereco}}" /><br />
         </div>
-        <input class="form-check-input" type="checkbox" id="ativo" name="ativo" {{#if response.data.ativo}} checked
-            {{/if}}>
 
-        <div for="ativo" class="form-div">Usuário ativo</div>
+
+        <div for="ativo" class="form-div"> <input class="form-check-input" type="checkbox" id="ativo" name="ativo" {{#if
+                response.data.ativo}} checked> Usuário ativo</div>
+        {{/if}}
 
         <br />
 

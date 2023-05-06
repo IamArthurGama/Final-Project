@@ -451,6 +451,16 @@ padding: 0.25rem 0.5rem;
 color: rgb(255, 255, 255);
 }
 
+
+
+/*DETALHE*/
+
+.detalhe{
+  margin: 0px auto;
+  text-align: center;
+ 
+}
+
 /*EDITAR*/
 
 .form-label-editar{
@@ -468,6 +478,13 @@ color: rgb(255, 255, 255);
 
 }
 
+.form-div {
+  color: rgb(255, 255, 255);
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif; 
+
+}
+
 /*LISTA*/
 
 .list-group-item{
@@ -480,6 +497,7 @@ color: rgb(255, 255, 255);
   color: rgb(255, 255, 255);
     font-weight: 200;
     font-family: 'Montserrat', sans-serif; 
+    margin: 5px 0px;
 }
 
 .lista {
