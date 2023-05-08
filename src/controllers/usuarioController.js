@@ -82,6 +82,27 @@ function findById(req, res) {
     });
 }
 
+function findUser(req, res) {
+    criarResponse();
+    const id = req.session.user.id;
+    Modelo.findByPk(id).then(data => {
+        if (data) {
+            responseModel.success = true;
+            responseModel.data = JSON.parse(JSON.stringify(data));
+            res.render("admin/usuario/perfil", { response: responseModel })
+        } else {
+            responseModel.error = "Nenhuma informação foi encontrada!";
+            req.flash("error_msg", "Nenhuma informação foi encontrada.")
+            res.redirect("/usuario")
+        }
+
+    }).catch(error => {
+        responseModel.error = error;
+        req.flash("error_msg", "Nenhuma informação foi encontrada.")
+        res.redirect("/usuario")
+    });
+}
+
 function telaRemove(req, res) {
     criarResponse();
     const id = req.params.id;
@@ -300,4 +321,4 @@ function senha(req, res) {
 
 
 
-module.exports = { list, findById, add, update, remove, telaAdd, telaRemove, telaEditar, telaLogin, login, logout, telaSenha, senha }
+module.exports = { list, findById, add, update, remove, telaAdd, telaRemove, telaEditar, telaLogin, login, logout, telaSenha, senha, findUser }

@@ -36,10 +36,13 @@
                 value="{{response.data.endereco}}" /><br />
         </div>
 
-
-        <div for="ativo" class="form-div"> <input class="form-check-input" type="checkbox" id="ativo" name="ativo" {{#if
-                response.data.ativo}} checked> Usuário ativo</div>
+        {{#if user.ativoAdm}}
+            <div for="ativo" class="form-div"> <input class="form-check-input" type="checkbox" id="ativo" name="ativo" {{#if
+                    response.data.ativo}} checked> Usuário ativo</div>
+            {{/if}}
         {{/if}}
+        
+       
 
         <br />
 

@@ -1,17 +1,50 @@
 <body>
-	<div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
+    <div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
 
 
-	<div class="lista" style="margin: 0px 0px"></div><h3>Dados do Usuário</h3></div>
-<hr>
-<div>
-<div class="detalhe">
-    <p><strong>Nome:</strong>&nbsp;&nbsp;{{response.data.nome}}</p>
-    <p><strong>Login:</strong>&nbsp;&nbsp;{{response.data.email}}</p>
-    <p><strong>Telefone:</strong>&nbsp;&nbsp;{{response.data.telefone}}</p>
-    <p><strong>Endereço:</strong>&nbsp;&nbsp;{{response.data.endereco}}</p>
-    <p><strong>Ativo:</strong>&nbsp;&nbsp;{{response.data.ativo}}</p>
-    <p><strong>Criado em:</strong>&nbsp;&nbsp;{{response.data.createdAt}}</p>
-    <p><strong>Alterado em:</strong>&nbsp;&nbsp;{{response.data.updatedAt}}</p>
-    <a href="/usuario" class="btn btn-success" style="margin-top: 10px;">Voltar</a>
-</div></body>
+    <div class="lista">
+        <h3 style="margin-bottom: 0px">Seja bem vindo(a) ao seu perfil {{response.data.nome}}</h3>
+    </div>
+    <div>
+        <div class="cadastro" style="margin-top: 0px;">
+            
+                <hr>
+                <div class="form-group">
+                    <div class="form-label-editar">
+                        <p><strong>Nome:</strong></p>
+                    </div>
+                    <input type="text" name="nome" id="nome" placeholder="Digite aqui o novo nome do Usuário"
+                        value="{{response.data.nome}}" disabled/><br />
+                </div>
+
+                <div class="form-group">
+                    <div for="nome" class="form-label-editar">
+                        <p><strong> E-mail:</strong></p>
+                    </div>
+                    <input type="text" name="email" id="email" placeholder="Digite aqui o novo email"
+                        value="{{response.data.email}}" disabled/><br />
+                </div>
+
+                <div class="form-group">
+                    <div for="nome" class="form-label-editar">
+                        <p><strong>Telefone:</strong></p>
+                    </div>
+                    <input type="text" name="telefone" id="telefone" placeholder="Digite aqui o novo telefone"
+                        value="{{response.data.telefone}}" disabled/><br />
+                </div>
+                <div class="form-group">
+                    <div for="nome" class="form-label-editar">
+                        <p><strong> Endereço:</strong></p>
+                    </div>
+                    <input type="text" name="endereco" id="endereco" placeholder="Digite aqui o novo endereço"
+                        value="{{response.data.endereco}}" disabled/><br />
+                </div>
+                <div class="lista" style="margin-top:0px ;">
+                    <div class="form-group" style="margin-top:0px ;">
+                        <a href="/usuario/update/{{response.data.id}}"><button>Editar</button></a>
+                    </div>
+                </div>
+            
+
+        </div>
+</body>

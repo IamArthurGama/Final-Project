@@ -9,9 +9,8 @@ router.get('/cardapio', (req, res) => {
     res.render('./admin/usuario/cardapio')
 })
 
-router.get('/perfil', (req, res) => {
-    res.render('./admin/usuario/perfil')
-})
+router.get('/perfil', util.vef, controler.findUser
+)
 
 
 
