@@ -2,14 +2,59 @@
 <div class="lista" style="margin: 0px 0px"></div><h3>Dados do Usuário</h3></div>
 <hr>
 <div>
-<div class="detalhe">
-    <p><strong>Nome:</strong>&nbsp;&nbsp;{{response.data.nome}}</p>
-    <p><strong>Login:</strong>&nbsp;&nbsp;{{response.data.email}}</p>
-    <p><strong>Telefone:</strong>&nbsp;&nbsp;{{response.data.telefone}}</p>
-    <p><strong>Endereço:</strong>&nbsp;&nbsp;{{response.data.endereco}}</p>
-    <p><strong>Ativo:</strong>&nbsp;&nbsp;{{response.data.ativo}}</p>
-    <p><strong>Criado em:</strong>&nbsp;&nbsp;{{response.data.createdAt}}</p>
-    <p><strong>Alterado em:</strong>&nbsp;&nbsp;{{response.data.updatedAt}}</p>
+ <div class="cadastro" style="margin-top: 0px;">
+    <div class="form-group">
+                    <div class="form-label-editar">
+                        <p><strong>Nome:</strong></p>
+                    </div>
+                    <input type="text" name="nome" id="nome"
+                        value="{{response.data.nome}}" disabled/><br />
+                </div>
+
+                <div class="form-group">
+                    <div for="nome" class="form-label-editar">
+                        <p><strong> E-mail:</strong></p>
+                    </div>
+                    <input type="text" name="email" id="email"
+                        value="{{response.data.email}}" disabled/><br />
+                </div>
+
+                <div class="form-group">
+                    <div for="nome" class="form-label-editar">
+                        <p><strong>Telefone:</strong></p>
+                    </div>
+                    <input type="text" name="telefone" id="telefone"
+                        value="{{response.data.telefone}}" disabled/><br />
+                </div>
+                <div class="form-group">
+                    <div for="nome" class="form-label-editar">
+                        <p><strong> Endereço:</strong></p>
+                    </div>
+                    <input type="text" name="endereco" id="endereco" 
+                        value="{{response.data.endereco}}" disabled/><br />
+                </div>
+                <div class="form-group">
+                    <div for="nome" class="form-label-editar">
+                        <p><strong> Ativo:</strong></p>
+                    </div>
+                    <input type="text" name="ativo" id="ativo"
+                        value="{{response.data.ativo}}" disabled/><br />
+                </div>
+                <div class="form-group">
+                    <div for="nome" class="form-label-editar">
+                        <p><strong> Criado em:</strong></p>
+                    </div>
+                    <input type="text" name="createdAt" id="createdAt" 
+                        value="{{response.data.createdAt}}" disabled/><br />
+                </div>
+                <div class="form-group">
+                    <div for="nome" class="form-label-editar">
+                        <p><strong> Alterado em:</strong></p>
+                    </div>
+                    <input type="text" name="updatedAt" id="updatedAt" 
+                        value="{{response.data.updatedAt}}" disabled/><br />
+                </div>
+
     <a href="/usuario" class="btn btn-success" style="margin-top: 10px;">Voltar</a>
 </div>
 <hr>

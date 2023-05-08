@@ -2,10 +2,10 @@
     <div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
 
 
-    <div class="lista">
+    <div class="lista" style="margin-bottom: 30px;">
         <h3 style="margin-bottom: 0px">Seja bem vindo(a) ao seu perfil {{response.data.nome}}</h3>
     </div>
-    <div>
+    <div class="card" style="width: 50%">
         <div class="cadastro" style="margin-top: 0px;">
             
                 <hr>
@@ -39,12 +39,20 @@
                     <input type="text" name="endereco" id="endereco" placeholder="Digite aqui o novo endereço"
                         value="{{response.data.endereco}}" disabled/><br />
                 </div>
+                
+                <div class="lista" style="margin-top:0px;">
+                    <div class="form-group" style="margin-bottom:0px ;">
+                        <a href="/usuario/update/{{response.data.id}}"><button>Editar</button></a>
+                    </div>
+                </div>
+
                 <div class="lista" style="margin-top:0px ;">
                     <div class="form-group" style="margin-top:0px ;">
-                        <a href="/usuario/update/{{response.data.id}}"><button>Editar</button></a>
+                        <a href="/usuario/senha"><button>Mudar senha</button></a>
                     </div>
                 </div>
             
 
         </div>
+    </div>
 </body>

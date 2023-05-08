@@ -1,25 +1,40 @@
-<h2>{{response.titulo}}</h2>
+<div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
+
+<h3>{{response.titulo}}</h3>
+
 <div>
-<form action="" method="POST"> 
+<form method="POST"> 
+    
     <hr>
-        <p class="mb-4">
+        <div class="card" style="width: 50%">
+        <div class="cadastro" style="margin-top: 0px;">
+
+        <p class="mb-4" style="margin-top: 10px;">
             Olá Sr(a) {{response.data.nome}}, para alterar a sua senha, preciso que você:<br>
             - Primeiro digite sua senha atual.<br>
             - Depois digite sua nova senha duas vezes.
         </p>
-    <hr>
-        <label for="senhaA" class="form-label">Senha Atual:</label>
-        <input type="password" name="senhaA" id="senhaA" class="form-control"
-            placeholder="Digite aqui a sua senha atual"/><br/>
-        
-        <label for="senhaN" class="form-label">Nova Senha:</label>
-        <input type="password" name="senhaN" id="senhaN" class="form-control"
-            placeholder="Digite aqui a sua nova senha"/><br/>
+            
+                <hr>
+                <div class="form-group">
+                    <div for="senhaA" class="form-label-editar"><p><strong>Senha Atual:</strong></p></div>
+                    <input type="password" name="senhaA" id="senhaA" placeholder="Digite aqui a sua senha atual"/><br />
+                </div>
 
-        <label for="senhaR" class="form-label">Repita a nova senha:</label>
-        <input type="password" name="senhaR" id="senhaR" class="form-control"
-            placeholder="Repita aqui a sua nova senha"/><br/>
+                <div class="form-group">
+                    <div for="senhaN" class="form-label-editar"><p><strong>Nova Senha:</strong></p></div>
+                    <input type="password" name="senhaN" id="senhaN" placeholder="Digite aqui a sua nova senha"/><br />
+                </div>
 
-        <button type="submit" class="btn btn-success">Alterar</button>
+                <div class="form-group">
+                    <div for="senhaR" class="form-label-editar"><p><strong>Repita a nova senha:</strong></p></div>
+                    <input type="password" name="senhaR" id="senhaR" placeholder="Repita aqui a sua nova senha"/><br />
+                </div>
+
+                <button type="submit" class="btn btn-success">Alterar</button>
+            
+
+        </div>
+    </div>
 </form>
 </div>
