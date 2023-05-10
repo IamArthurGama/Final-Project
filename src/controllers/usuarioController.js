@@ -138,7 +138,11 @@ function update(req,res){
                     }
                 }).then(() => {
                     req.flash("success_msg", "Usuário editado com sucesso!")
-                    res.redirect("/usuario")
+                    if (req.session.user.ativoAdm != 1){
+                    res.redirect("/usuario/perfil")
+                    }else{
+                        res.redirect("/usuario")
+                    }
                 }).catch(error => {
                     responseModel.error = error;
                     req.flash("error_msg", "Nenhuma informação foi encontrada!")

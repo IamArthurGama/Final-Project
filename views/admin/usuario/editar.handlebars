@@ -37,17 +37,22 @@
         </div>
 
         {{#if user.ativoAdm}}
-            <div for="ativo" class="form-div"> <input class="form-check-input" type="checkbox" id="ativo" name="ativo" {{#if
-                    response.data.ativo}} checked> Usuário ativo</div>
-            {{/if}}
+        <div for="ativo" class="form-div"> <input class="form-check-input" type="checkbox" id="ativo" name="ativo"checked> Usuário ativo</div>
+
         {{/if}}
-        
-       
+
+
 
         <br />
 
+        {{#if user.ativoAdm}}
+        <a href="/usuario" class="btn btn-danger">Voltar(PROFESSOR ME AJUDA PELO AMOR DE DEUS)</a>
+         {{/if}}
+
         <button type="submit" class="btn btn-success">Salvar</button>
 
-        <a href="/usuario" class="btn btn-danger">Cancelar</a>
+         {{#if user}}
+        <a href="/usuario/perfil" class="btn btn-danger">Cancelar</a>
+         {{/if}}
     </form>
 </div>
