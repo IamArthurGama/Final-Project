@@ -53,6 +53,25 @@
     margin-top: 0px;
   }
 
+  .navbar button{
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
+
+  .navbar-nav .dropdown-menu{
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+
+  }
+
+  .dropdown-item{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #656565;
+}
 
 
   .btn {
@@ -275,7 +294,6 @@
   .footer_c {
     background-color: #f86e04;
     margin-bottom: -100px;
-    clear: left;
   }
 
   /* Estilos padrão */

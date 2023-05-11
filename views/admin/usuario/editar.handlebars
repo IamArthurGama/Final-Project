@@ -25,7 +25,7 @@
             <div for="nome" class="form-label-editar">
                 <p><strong>Telefone:</strong></p>
             </div>
-            <input type="text" name="telefone" id="telefone" placeholder="Digite aqui o novo telefone"
+            <input type="text" name="telefone" id="telefone" placeholder="Digite aqui o novo telefone" maxlength="11"
                 value="{{response.data.telefone}}" /><br />
         </div>
         <div class="form-group">
@@ -37,7 +37,8 @@
         </div>
 
         {{#if user.ativoAdm}}
-        <div for="ativo" class="form-div"> <input class="form-check-input" type="checkbox" id="ativo" name="ativo"checked> Usuário ativo</div>
+        <div for="ativo" class="form-div"> <input class="form-check-input" type="checkbox" id="ativo" name="ativo"
+                checked> Usuário ativo</div>
 
         {{/if}}
 
@@ -45,14 +46,17 @@
 
         <br />
 
-        {{#if user.ativoAdm}}
-        <a href="/usuario" class="btn btn-danger">Voltar(PROFESSOR ME AJUDA PELO AMOR DE DEUS)</a>
-         {{/if}}
+
 
         <button type="submit" class="btn btn-success">Salvar</button>
 
-         {{#if user}}
-        <a href="/usuario/perfil" class="btn btn-danger">Cancelar</a>
-         {{/if}}
+
+
+        {{#if user.ativoAdm}}
+        <a href="/usuario" class="btn btn-danger">Cancelar</a>  
+        {{else}}
+            <a href="/usuario/perfil" class="btn btn-danger">Cancelar</a>  
+        {{/if}}
+
     </form>
 </div>
