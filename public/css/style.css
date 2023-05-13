@@ -420,15 +420,10 @@ body {
     width: 60%;
   }
 
-
-
-
-
-
 .card {
 padding: 5px;
 margin: 0px auto 20px;
-width: 70%;
+width: 50%;
 background-color: #222222;
 padding: 3px;
 box-shadow: 2px 2px 1px #4b4b4b;
@@ -444,7 +439,34 @@ display: flex;
 flex-direction: column;
 height: 100%;
 justify-content: space-between;
+width: 50%;
+float:left ;
 }
+
+.card-body2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  width: 50%;
+  float: right ;
+  vertical-align: middle;
+  }
+
+  .card-body2 input[type="number"]{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    float: right ;
+    vertical-align: middle;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 20%;
+    }
+
+
 
 .card-title {
 font-size: 2.25rem;

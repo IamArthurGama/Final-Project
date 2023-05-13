@@ -1,73 +1,83 @@
 <div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
 
 <div class="cardapio">
-        <h3>Cardápio</h3>
-        <hr>
-        
+  <h3>Cardápio</h3>
+  <hr>
+
 </div>
 
+<form action="./admin/usuario/confirma.handlebars.php" method="post">
 
-<div class="card">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="/images/AAAAAAA.jpg" class="card-img" alt="Imagem do cardápio">
+  <div class="card">
+    <div class="row no-gutters">
+
+      <div class="col-md-4">
+        <img src="/images/AAAAAAA.jpg" class="card-img" alt="Imagem do cardápio">
+      </div>
+
+      <div class="col-md-8">
+
+        <div class="card-body">
+
+          <h5 class="card-title">X-Tudo</h5>
+          <input type="hidden" name="lanche[]" value="X-Tudo">
+          <p class="card-text">Pão, queijo e rato</p>
+          <p class="card-text"><strong>Preço:</strong> R$ 9,99</p>
+          <input type="hidden" name="preco[]" value="9.99">
+        </div>
+        <div class="card-body2"><input type="number" name="qtd[]" value="0" min="0"></div>
+      </div>
+
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">X-Ratão</h5>
-        <p class="card-text">Pão, queijo e rato</p>
-        <p class="card-text"><strong>Preço:</strong> R$ 9,99</p>
-        
+  </div>
+
+
+  <div class="card">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="/images/AAAAAAA.jpg" class="card-img" alt="Imagem do cardápio">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">X-Salada</h5>
+          <input type="hidden" name="lanche[]" value="X-Salada">
+          <p class="card-text">Pão, queijo, alface e barata.</p>
+          <p class="card-text"><strong>Preço:</strong> R$ 8,99</p>
+          <input type="hidden" name="preco[]" value="8.99">
+        </div>
+        <div class="card-body2"><input type="number" name="qtd[]" value="0" min="0"></div>
       </div>
     </div>
   </div>
-</div>
 
-
-<div class="card">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="/images/AAAAAAA.jpg" class="card-img" alt="Imagem do cardápio">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">X-Barata</h5>
-        <p class="card-text">Pão, queijo, alface e barata.</p>
-        <p class="card-text"><strong>Preço:</strong> R$ 8,99</p>
+  <div class="card">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="/images/AAAAAAA.jpg" class="card-img" alt="Imagem do cardápio">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">X-Salada Bacon</h5>
+          <input type="hidden" name="lanche[]" value="X-Salada Bacon">
+          <p class="card-text">Pão, queijo, alface e barata.</p>
+          <p class="card-text"><strong>Preço:</strong> R$ 8,99</p>
+          <input type="hidden" name="preco[]" value="8.99">
+        </div>
+        <div class="card-body2"><input type="number" name="qtd[]" value="0" min="0"></div>
       </div>
     </div>
   </div>
-</div>
 
 
-<div class="card">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="/images/AAAAAAA.jpg" class="card-img" alt="Imagem do cardápio">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">X-Catarro</h5>
-        <p class="card-text">Pão, queijo, alface e meleca.</p>
-        <p class="card-text"><strong>Preço:</strong> R$ 4,99</p>
-      </div>
+
+
+  <div class="lista" style="margin-top:0px ;">
+    <div class="form-group" style="margin-top:0px ;">
+      <a href="/usuario/confirma"><button type="submit">Fazer pedido</button></a>
     </div>
   </div>
-</div>
-
-<div class="card">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="/images/AAAAAAA.jpg" class="card-img" alt="Imagem do cardápio">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">X-Bueiro</h5>
-        <p class="card-text">Pão, queijo, alface e vestigios de bueiro .</p>
-        <p class="card-text"><strong>Preço:</strong> R$ 14,99</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 
+
+
+</form>

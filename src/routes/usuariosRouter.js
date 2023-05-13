@@ -6,7 +6,11 @@ const util = require("../utilidades/util")
 router.get('/', util.vef, controler.list);
 
 router.get('/cardapio', (req, res) => {
-    res.render('./admin/usuario/cardapio')
+    res.render('./admin/usuario/cardapio.handlebars')
+})
+
+router.post('/confirma', (req, res) => {
+    res.render('./admin/usuario/confirma.handlebars.php')
 })
 
 router.get('/perfil', util.vef, controler.findUser
