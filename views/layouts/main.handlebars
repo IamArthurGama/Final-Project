@@ -27,7 +27,7 @@
               <a class="nav-link" aria-current="page" href="/#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/usuario/cardapio">Cardápio</a>
+              <a class="nav-link" href="/cardapio">Cardápio</a>
             </li>
 
 
@@ -47,6 +47,7 @@
               <ul class="dropdown-menu">
                 {{#if user.ativoAdm }}
                 <li><a class="dropdown-item" href="/usuario/list">Lista de Clientes</a></li>
+                <li><a class="dropdown-item" href="/cardapio/add">Cadastro de cardápio</a></li>
                 {{else}}
                 {{/if}}
                 <li><a class="dropdown-item" href="/usuario/perfil">Perfil</a></li>

@@ -5,31 +5,40 @@
   <hr>
 
 </div>
-
-<form action="./admin/usuario/confirma.handlebars.php" method="post">
-
+<form method="post">
+{{#each response.data}}
   <div class="card">
     <div class="row no-gutters">
 
       <div class="col-md-4">
-        <img src="/images/AAAAAAA.jpg" class="card-img" alt="Imagem do cardápio">
+        <img src="{{foto}}" class="card-img" alt="{{nome}}">
       </div>
 
       <div class="col-md-8">
 
         <div class="card-body">
 
-          <h5 class="card-title">X-Tudo</h5>
-          <input type="hidden" name="lanche[]" value="X-Tudo">
-          <p class="card-text">Pão, queijo e rato</p>
-          <p class="card-text"><strong>Preço:</strong> R$ 9,99</p>
-          <input type="hidden" name="preco[]" value="9.99">
+          <h5 class="card-title">{{nome}}</h5>
+          <p class="card-text">{{descricao}}</p>
+          <p class="card-text"><strong>Preço:</strong> R$ {{preco}}</p>
         </div>
-        <div class="card-body2"><input type="number" name="qtd[]" value="0" min="0"></div>
+        <div class="card-body2"><input type="number" name="{{id}}" value="0" min="0"></div>
       </div>
 
     </div>
   </div>
+
+{{else}}
+<div class="m-5">
+  <h5>Sem itens cadastrados.</h5>
+</div>
+{{/each}}
+
+
+
+ 
+
+  
 
 
   <div class="card">
@@ -73,7 +82,7 @@
 
   <div class="lista" style="margin-top:0px ;">
     <div class="form-group" style="margin-top:0px ;">
-      <a href="/usuario/confirma"><button type="submit">Fazer pedido</button></a>
+      <button type="submit">Fazer pedido</button>
     </div>
   </div>
 
