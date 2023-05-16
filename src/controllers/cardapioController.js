@@ -72,26 +72,6 @@ function telaAdd(req, res) {
 }
 
 
-function list(req, res) {
-    criarResponse();
-    Modelo.findAll().then(data => {
-        if (data.length > 0) {
-            responseModel.success = true;
-            responseModel.data = JSON.parse(JSON.stringify(data));
-            responseModel.titulo = "Lista de Usuários"
-            console.log(responseModel)
-            return res.render("admin/cardapio/lista", { response: responseModel });
-        } else {
-            responseModel.error = "Tabela Vazia";
-            return res.json(responseModel);
-        }
-
-    }).catch(error => {
-        responseModel.error = error;
-        return res.json(responseModel);
-    });
-}
-
 
 
 
