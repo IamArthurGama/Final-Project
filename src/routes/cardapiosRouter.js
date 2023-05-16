@@ -5,7 +5,7 @@ var controler = require("../controllers/cardapioController")
 router.get('/',controler.list)
 router.post('/',controler.confirm);
 
-router.get('/suporte',controler.add);
+router.post('/add',controler.add);
 router.get('/add',controler.telaAdd);
 
 

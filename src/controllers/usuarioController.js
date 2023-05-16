@@ -201,7 +201,7 @@ function telaAdd(req, res) {
     res.render("admin/usuario/novo", { response: responseModel });
 }
 
-function add(req,res){
+function add(req,res){ 
     criarResponse();
     modelo = vefPreenchimento(req,res);
     if(modelo){
