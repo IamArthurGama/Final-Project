@@ -238,7 +238,7 @@ function telaEditar(req, res) {
         req.flash("error_msg", "Nenhuma informação foi encontrada.")
         res.redirect("/usuario")
     });
-}
+} 
 
 function telaLogin(req, res) {
     criarResponse()
