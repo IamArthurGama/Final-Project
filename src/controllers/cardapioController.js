@@ -54,9 +54,7 @@ function add(req,res){
 }
 
 
-
-
-function list(req, res) {
+function telaAdd(req, res) {
     criarResponse();
     Modelo.findAll().then(data => {
         if (data.length > 0) {
@@ -141,14 +139,8 @@ function telaRemove(req, res) {
             res.redirect("/cardapio/list")
         }
 
-    }).catch(error => {
-        responseModel.error = error;
-        req.flash("error_msg", "Nenhuma informação foi encontrada.")
-        res.redirect("/cardapio/list")
-    });
 
 }
-
 
 
 
