@@ -46,12 +46,9 @@ app.listen(port, () => {
 })
 
 //Configuração das rotas do servidor 
-app.get("/", (req, res)=> {
-    responseModel = {}
-    responseModel.success = true;
-    responseModel.titulo = process.env.NOME
-    res.render("index",{response: responseModel});  
-})
+var controler = require("./controllers/cardapioController")
+
+app.get("/", controler.listSite)
 
 const usuario = require("./routes/usuariosRouter")
 app.use('/usuario/', usuario);

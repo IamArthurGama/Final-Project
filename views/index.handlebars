@@ -38,25 +38,20 @@
   <div class="lancamentos">
     <h2>Especialidades</h2>
     <hr>
+    
     <div class="produtos">
+      {{#each response.data}}
       <div class="produto">
-        <img src="/images/AAAAAAA.jpg" alt="Pizza">
-        <h3>Pizza Margherita</h3>
-        <p>Tomate, mussarela, manjericão</p>
-        <p>R$ 25,00</p>
+        <img src="{{foto}}" alt="{{nome}}">
+        <h3>{{nome}}</h3>
+        <p>{{descricao}}</p>
+        <p>{{preco}}</p>
+      </div> 
+      {{else}}
+      <div class="m-5">
+        <h5>Sem itens cadastrados.</h5>
       </div>
-      <div class="produto">
-        <img src="/images/AAAAAAA.jpg" alt="Hamburguer">
-        <h3>Hamburguer</h3>
-        <p>Pão, carne, alface, tomate, queijo</p>
-        <p>R$ 20,00</p>
-      </div>
-      <div class="produto">
-        <img src="/images/AAAAAAA.jpg" alt="Lasanha">
-        <h3>Lasanha à bolonhesa</h3>
-        <p>Carne moída, molho de tomate, massa</p>
-        <p>R$ 30,00</p>
-      </div>
+      {{/each}}
 
     </div>
   </div>

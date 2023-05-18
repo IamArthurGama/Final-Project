@@ -1,0 +1,69 @@
+<div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
+<div class="lista" style="margin: 0px 0px"></div>
+<h3>Dados do Lanche: {{response.data.nome}}</h3>
+</div>
+<hr>
+<div>
+    <div class="card" style="width: 50%">
+        <div class="cadastro" style="margin-top: 0px;">
+
+            <div class="form-group">
+                <div class="form-label-editar">
+                    <p><strong>Nome:</strong></p>
+                </div>
+                <input type="text" name="nome" id="nome" value="{{response.data.nome}}" disabled /><br />
+            </div>
+
+            <div class="form-group">
+                 <div for="nome" class="form-label-editar">
+                <p><strong> Descrição:</strong></p>
+            </div>
+                <input type="text" name="descricao" id="descricao" placeholder="Digite aqui a nova descrição"
+                value="{{response.data.descricao}}" disabled/><br />
+            </div>
+
+            <div class="form-group">
+                <div for="nome" class="form-label-editar">
+                <p><strong>Preço:</strong></p>
+            </div>
+                <input type="text" name="preco" id="preco" placeholder="Digite aqui o novo preço"
+                value="{{response.data.preco}}" disabled/><br />
+            </div>
+            <div class="form-group">
+                <div for="nome" class="form-label-editar">
+                <p><strong> Foto:</strong></p>
+            </div>
+                <input type="text" name="foto" id="foto" placeholder="Digite aqui o novo endereço da foto"
+                value="{{response.data.foto}}" disabled/><br />
+            </div>
+             <div class="form-group">
+            <div for="nome" class="form-label-editar">
+                <p><strong> Foto do destaque:</strong></p>
+            </div>
+            <input type="text" name="fotoDestaque" id="fotoDestaque" placeholder="Digite aqui o novo endereço da foto"
+                value="{{response.data.fotoDestaque}}" disabled /><br />
+        </div>
+            <div class="form-group">
+                <div for="nome" class="form-label-editar">
+                    <p><strong> Ativo:</strong></p>
+                </div>
+                <input type="text" name="ativo" id="ativo" value="{{response.data.ativo}}" disabled /><br />
+            </div>
+            <div class="form-group">
+                <div for="nome" class="form-label-editar">
+                    <p><strong> Criado em:</strong></p>
+                </div>
+                <input type="text" name="createdAt" id="createdAt" value="{{response.data.createdAt}}" disabled /><br />
+            </div>
+            <div class="form-group">
+                <div for="nome" class="form-label-editar">
+                    <p><strong> Alterado em:</strong></p>
+                </div>
+                <input type="text" name="updatedAt" id="updatedAt" value="{{response.data.updatedAt}}" disabled /><br />
+            </div>
+
+            <a href="/cardapio/list" class="btn btn-success" style="margin-top: 10px;">Voltar</a>
+        </div>
+    </div>
+</div>
+<hr>
