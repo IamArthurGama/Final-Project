@@ -387,6 +387,36 @@
     }
   }
 
+/*CONFIRMA*/
+
+.card-maior {
+  padding: 5px;
+  margin: 0px auto 20px;
+  width: 60%;
+  background-color: #393939;
+  padding: 3px;
+  box-shadow: 2px 2px 1px #4b4b4b;
+  border-radius: 5px;
+  }
+
+.card-confirma {
+  padding: 5px;
+  margin: 0px auto 20px;
+  width: 95%;
+  background-color: #cecece;
+  padding: 3px;
+  box-shadow: 0px -3px 1px #252525;
+  border-radius: 5px;
+  }
+
+  .card-confirma ul li{
+    background-color: transparent;
+  }
+
+  .card-confirma list-group list-group-flush list-group-item row{
+    color: #1a1a1a;
+  }
+
 
 /*CARDAPIO*/
 
