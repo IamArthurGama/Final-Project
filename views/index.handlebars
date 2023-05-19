@@ -42,7 +42,7 @@
     <div class="produtos">
       {{#each response.data}}
       <div class="produto">
-        <img src="{{foto}}" alt="{{nome}}">
+        <a href="/cardapio/#{{nome}}"><img src="{{foto}}" alt="{{nome}}"></a>
         <h3>{{nome}}</h3>
         <p>{{descricao}}</p>
         <p>{{preco}}</p>

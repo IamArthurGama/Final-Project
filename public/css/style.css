@@ -393,7 +393,7 @@
   padding: 5px;
   margin: 0px auto 20px;
   width: 60%;
-  background-color: #393939;
+  background-color: #2d2d2d;
   padding: 3px;
   box-shadow: 2px 2px 1px #4b4b4b;
   border-radius: 5px;
@@ -402,10 +402,10 @@
 .card-confirma {
   padding: 5px;
   margin: 0px auto 20px;
-  width: 95%;
-  background-color: #cecece;
+  width: 90%;
+  background-color: #222222;
   padding: 3px;
-  box-shadow: 0px -3px 1px #252525;
+  box-shadow: 2px 2px 1px #141414;
   border-radius: 5px;
   }
 
