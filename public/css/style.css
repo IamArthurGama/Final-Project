@@ -490,19 +490,21 @@ float:left ;
     float: right ;
     vertical-align: middle;
     margin: auto;
-    width: 60px;
+    width: 80px;
     height: 60px;
     font-size: 30px;
-    border-radius: 20%;
+    border-radius: 10%;
+    text-align: center;
+    background-color:#2e2e2e;
+    border: #4d4d4d 2px solid;
+    color: rgb(255, 255, 255);
     }
-
-
 
 .card-title {
 font-size: 2.25rem;
 margin-bottom: 0.25rem;
 color: rgb(255, 255, 255);
-    font-weight: 400;
+    font-weight: 500;
     font-family: 'Montserrat', sans-serif; 
  
 }
@@ -510,10 +512,11 @@ color: rgb(255, 255, 255);
 .card-text {
 margin-bottom: 1rem;
 color: rgb(255, 255, 255);
-    font-weight: 200;
+    font-weight: 300;
     font-family: 'Montserrat', sans-serif; 
   
 }
+
 /**/
 .cadastro btn {
 font-size: 0.75rem;
