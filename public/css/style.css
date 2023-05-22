@@ -453,7 +453,7 @@ body {
 .card {
 padding: 5px;
 margin: 0px auto 20px;
-width: 50%;
+width: 70%;
 background-color: #222222;
 padding: 3px;
 box-shadow: 2px 2px 1px #4b4b4b;
@@ -461,6 +461,7 @@ box-shadow: 2px 2px 1px #4b4b4b;
 
 .card-img {
 height: 100%;
+width: 100%;
 object-fit: cover;
 }
 
@@ -472,6 +473,11 @@ justify-content: space-between;
 width: 50%;
 float:left ;
 }
+
+.card-body h5 {
+    color: #e46300;
+    font-weight: 600;
+  }
 
 .card-body2 {
   display: flex;
