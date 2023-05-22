@@ -1,0 +1,50 @@
+<div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
+
+<div class="lista" style="margin-bottom:0px ;">
+  <h3 style="margin-bottom:0px ;">Confirmação de Pedido</h3>
+  <hr>
+  {{>_msg}}
+</div>
+
+
+<div class="card-maior">
+  <div class="lista" style="margin-top:0px ;">
+    <div class="form-group" style="margin-top:0px ;">
+      <a href="/cardapio"><button>Escolher mais lanches</button></a>
+    </div>
+  </div>
+
+
+
+
+  {{#each pedido}}
+  <div class="card-confirma">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+
+        <div class="row">
+          <div class="col">
+            <p><strong>Nome: &nbsp</strong> {{nome}}
+          </div>
+          <div class="col">
+            <strong>Preço: &nbsp</strong> R${{preco}}
+          </div>
+          <div class="col">
+            <strong>Quantidade: &nbsp</strong> {{qtda}}
+          </div>
+          <div class="col">
+            <strong>Valor total: &nbsp</strong> {{total}}
+          </div>
+          <div class="col d-flex flex-row-reverse">
+            <a href="/cardapio/remove/{{id}}" class="btn btn-danger ms-2">Deletar</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  {{/each}}
+
+  {{frete}}
+  {{total}}
+
+</div>

@@ -43,8 +43,29 @@ function vefPreenchimentoEditar(req, res) {
 }
 
 function confirm(req,res){
-    console.log("oik")
-    res.json(req.body);
+    data = req.session.cardapio
+    const form = Object.keys(req.body).map((key) => [key, req.body[key]]);
+    pedido = []
+    form.forEach(element => {
+        if(element[1] != 0){
+            itemPedido = data.filter(item => (item.id == element[0]))[0]
+            itemPedido.qtda = element[1]
+            itemPedido.total = itemPedido.preco * itemPedido.qtda
+            pedido.push(itemPedido)
+        }
+    });
+
+    req.session.cardapio = pedido
+
+    const total = pedido.reduce((itemPedido) => {
+        return (itemPedido++);
+    }, 0);
+
+    frete = 10
+
+    
+
+    res.render("site/confirma", {pedido, total, frete})
 }
 
 function findById(req, res) {
@@ -147,7 +168,7 @@ function home(req, res) {
         if (data.length > 0) {
             responseModel.success = true;
             responseModel.data = JSON.parse(JSON.stringify(data));
-            console.log(responseModel)
+            req.session.cardapio = responseModel.data
             return res.render("./site/cardapio", { response: responseModel });
         } else {
             responseModel.error = "Tabela Vazia";

@@ -5,10 +5,8 @@ const util = require("../utilidades/util")
 
 router.get('/list', util.vef, controler.list)
 /*router.post('/confirma',controler.confirm);*/
-router.get('/confirma', (req,res)=> {
-    res.render("admin/cardapio/confirma")
-});
 router.get('/',controler.home)
+router.post('/',controler.confirm)
 
 router.get('/add',controler.telaAdd);
 router.post('/add',controler.add);
