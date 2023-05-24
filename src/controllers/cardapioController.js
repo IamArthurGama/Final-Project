@@ -188,7 +188,7 @@ function remove(req,res){
         if (data) {
             Modelo.destroy({
                 where: {
-                    id: id
+                    id: id                                                         //ta deletando o lanche no banco de dados
                 }
             }).then(() => {
                 responseModel.success = true;

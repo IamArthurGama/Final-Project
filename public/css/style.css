@@ -409,6 +409,21 @@
   border-radius: 5px;
   }
 
+  .card-confirma-total {
+    padding: 10px 0px;
+    margin: 50px auto 20px;
+    width: 100%;
+    /* background-color: #1c1c1c; */
+    /* box-shadow: 2px 2px 1px #d99561; */
+    border-radius: 5px;
+    color: #ff6f00;
+    opacity: 10;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+}
+    
+
   .card-confirma ul li{
     background-color: transparent;
   }
@@ -737,4 +752,25 @@ label p {
   color: rgb(255, 255, 255);;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif; 
+}
+
+
+/*CONFIRMA*/
+
+.form-group-finalizar button {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color:#359b38;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  cursor: pointer;
+  margin: 20px 0px 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  position: relative;
+}
+.form-group-finalizar button:hover {
+  background-color: #257127;
 }
