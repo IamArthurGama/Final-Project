@@ -8,6 +8,10 @@ router.get('/list', util.vef, controler.list)
 router.get('/',controler.home)
 router.post('/',controler.confirm)
 
+router.get('/final', (req,res) => {
+    res.render("site/telaConfirma")
+})
+
 router.get('/add',controler.telaAdd);
 router.post('/add',controler.add);
 
@@ -18,5 +22,7 @@ router.post('/update/:id', util.vef, controler.update);
 
 router.get('/remove/:id', util.vef, controler.telaRemove);
 router.post('/remove/:id', util.vef, controler.remove);
+
+router.get('/:id',controler.deleta)
 
 module.exports = router;

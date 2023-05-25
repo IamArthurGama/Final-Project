@@ -6,6 +6,7 @@ const md5 = require('md5');
 const { response } = require("express");
 
 const qtdaListaPrincipal = 3
+const frete = 10
 
 const responseModel = {}
 function criarResponse(){
@@ -57,16 +58,38 @@ function confirm(req,res){
 
     req.session.cardapio = pedido
 
-    const total = pedido.reduce((itemPedido) => {
-        return (itemPedido++);
+    total = pedido.reduce((total, itemPedido) => {
+        return (total + itemPedido.total);
     }, 0);
+    total += frete
 
-    frete = 10
 
     
 
     res.render("site/confirma", {pedido, total, frete})
 }
+
+
+function deleta(req,res){
+    data = req.session.cardapio
+    const id = req.params.id;
+    
+    pedido = data.filter(item => (item.id != id))
+
+    if (pedido.length) {
+        req.session.cardapio = pedido
+
+        total = pedido.reduce((total, itemPedido) => {
+            return (total + itemPedido.total);
+        }, 0);
+        total += frete
+
+        res.render("site/confirma", {pedido, total, frete})
+    }else{
+        res.redirect("/cardapio")
+    }
+}
+
 
 function findById(req, res) {
     criarResponse();
@@ -292,4 +315,4 @@ function telaEditar(req, res) {
 
 
 
-module.exports = {findById, home, list, listSite, add, remove, telaRemove, update, confirm, telaAdd, telaEditar}
+module.exports = {findById, home, list, listSite, add, remove, telaRemove, update, confirm, telaAdd, telaEditar, deleta}

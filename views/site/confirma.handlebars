@@ -33,10 +33,10 @@
             <strong>Quantidade: &nbsp</strong> {{qtda}}
           </div>
           <div class="col">
-            <strong>Valor total: &nbsp</strong> {{total}}
+            <strong>Subtotal: &nbsp</strong> R${{total}}
           </div>
           <div class="col d-flex flex-row-reverse">
-            <a href="/cardapio/remove/{{id}}" class="btn btn-danger ms-2">Deletar</a>
+            <a href="/cardapio/{{id}}" class="btn btn-danger ms-2">Deletar</a>
           </div>
         </div>
       </li>
@@ -45,8 +45,8 @@
   {{/each}}
 
 <article style="width:60%; margin:0px auto">
-  <div class="card-confirma-total">
-    Valor Total: &nbsp{{total}}
+  <div class="card-confirma-total" format="currency">
+    Valor Total: &nbsp R${{total}}
   </div>
 
 

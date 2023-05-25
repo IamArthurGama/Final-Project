@@ -776,3 +776,24 @@ label p {
 .form-group-finalizar button:hover {
   background-color: #257127;
 }
+
+.card-final{
+  padding: 5px;
+  margin: 15% auto;
+  width: 70%;
+  background-color: #0f461161;
+  box-shadow: 2px 2px 1px #2f8f31;
+  text-align: center;
+  border: 2px solid #0f6011;
+  border-radius: 5px;
+}
+
+.card-final h3{
+  margin: 50px;
+  text-align: center;
+}
+
+.card-final img{
+  width: 90px;
+    margin-right: 41px;
+}
