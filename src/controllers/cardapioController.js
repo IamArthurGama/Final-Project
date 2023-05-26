@@ -51,7 +51,8 @@ function confirm(req,res){
         if(element[1] != 0){
             itemPedido = data.filter(item => (item.id == element[0]))[0]
             itemPedido.qtda = element[1]
-            itemPedido.total = itemPedido.preco * itemPedido.qtda
+            valor = itemPedido.preco * itemPedido.qtda
+            itemPedido.total = valor.toFixed(2);
             pedido.push(itemPedido)
         }
     });
@@ -59,9 +60,10 @@ function confirm(req,res){
     req.session.cardapio = pedido
 
     total = pedido.reduce((total, itemPedido) => {
-        return (total + itemPedido.total);
+        return (total + (itemPedido.total*1));
     }, 0);
     total += frete
+    total = total.toFixed(2).replace(".",",");
 
 
     
