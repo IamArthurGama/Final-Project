@@ -1,5 +1,5 @@
 <div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
-
+   {{>_msg}}
 <div class="cardapio">
   <h3>Cardápio</h3>
   <hr>
@@ -21,7 +21,7 @@
 
           <h5 class="card-title">{{nome}}</h5>
           <p class="card-text">{{descricao}}</p>
-          <p class="card-text"><strong>Preço:</strong> R$ {{preco}}</p>
+          <p class="card-text-preco">Preço: <strong style="font-size: 1.7rem;"> R$ {{preco}}</strong></p>
         </div>
         <div class="card-body2"><input type="number" name="{{id}}" value="0" min="0"></div>
       </div>
