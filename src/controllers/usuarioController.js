@@ -260,11 +260,15 @@ function login(req, res) {
             responseModel.data = JSON.parse(JSON.stringify(data))
             responseModel.data.ativoAdm = responseModel.data.ativoAdm == 1?true:false
             req.session.user = responseModel.data[0]
-            res.redirect("/")
+            if(req.session.destino == "finalizar"){
+                res.redirect("/cardapio/finalizar")
+            }else{
+                res.redirect("/")
+            }
         } else {
             responseModel.error = "Login ou senha incorretos!";
             req.flash("error_msg", "Login ou senha incorretos!")
-            res.redirect("/usuario/login")
+            res.redirect("/usuario/login")  
         }
     }).catch(error => {
         responseModel.error = error;

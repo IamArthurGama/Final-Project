@@ -44,6 +44,7 @@ function vefPreenchimentoEditar(req, res) {
 }
 
 function confirm(req,res){
+    criarResponse();
     data = req.session.cardapio
     const form = Object.keys(req.body).map((key) => [key, req.body[key]]);
     pedido = []
@@ -90,6 +91,13 @@ function deleta(req,res){
     }else{
         res.redirect("/cardapio")
     }
+}
+
+function final(req,res){
+    //req.flash("success_msg", "bananada")
+    //res.redirect("/")
+    res.render("site/telaConfirma")
+
 }
 
 
@@ -317,4 +325,4 @@ function telaEditar(req, res) {
 
 
 
-module.exports = {findById, home, list, listSite, add, remove, telaRemove, update, confirm, telaAdd, telaEditar, deleta}
+module.exports = {findById, home, list, listSite, add, remove, telaRemove, update, confirm, telaAdd, telaEditar, deleta, final}

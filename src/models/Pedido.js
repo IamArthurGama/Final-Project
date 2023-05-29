@@ -5,8 +5,7 @@ module.exports = (sequelize, Sequelize) => {
 			autoIncrement: true,
 			primaryKey: true,
 			type: Sequelize.INTEGER
-		},
-//falta a data, mas tava dando problema
+		},										//id usuario, id cliente, quantidade
 		nome: {
 			allowNull: false,
 			type: Sequelize.STRING,

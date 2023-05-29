@@ -6,11 +6,18 @@ const util = require("../utilidades/util")
 router.get('/list', util.vef, controler.list)
 /*router.post('/confirma',controler.confirm);*/
 router.get('/',controler.home)
-router.post('/',controler.confirm)
+router.post('/', controler.confirm)
 
-router.get('/final', (req,res) => {
-    res.render("site/telaConfirma")
+router.get('/final', (req,res)=>{
+    if(req.session.user){
+        res.redirect("/cardapio/finalizar")
+    }else{
+        req.session.destino="finalizar"
+        res.redirect("/usuario/login")
+    }
 })
+
+router.get('/finalizar', controler.final)
 
 router.get('/add',controler.telaAdd);
 router.post('/add',controler.add);
