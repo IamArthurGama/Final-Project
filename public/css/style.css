@@ -833,25 +833,3 @@ label p {
 
 
 
-@media (min-width: 300px){
-.navbar-expand-lg .navbar-collapse {
-    display: flex!important;
-    flex-basis: auto;
-    text-align: center
-}}
-
-@media (max-width: 700px) { 
-  nav, ul {
-    flex-direction: column;
-    margin-top: 100px;
-  }
-  ul{
-    text-align: center;
-  }
-  nav{
-    padding: 10px;
-  }
-  button{
-    display: flex;
-  }
-}
