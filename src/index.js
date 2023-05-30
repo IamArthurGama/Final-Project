@@ -56,6 +56,9 @@ app.use('/usuario/', usuario);
 const cardapio = require("./routes/cardapiosRouter")
 app.use('/cardapio/', cardapio);
 
+const pedido = require("./routes/pedidosRouter")
+app.use('/pedido/', pedido);
+
 
 //Esta rota tem que ser a última.
 //app.use((req, res) => {
