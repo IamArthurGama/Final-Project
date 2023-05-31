@@ -13,15 +13,7 @@ function criarResponse(){
     responseModel.error =  null
 }
 criarResponse();
-
-
-
-
-
-
-
-
-
+ 
 function findById(req, res) {
     criarResponse();
     const id = req.params.id;
@@ -29,7 +21,7 @@ function findById(req, res) {
         if (data) {
             responseModel.success = true;
             responseModel.data = JSON.parse(JSON.stringify(data));
-            res.render("admin/cardapio/detalhe", { response: responseModel })
+            res.render("site/pedido/detalhe", { response: responseModel })
         } else {
             responseModel.error = "Nenhuma informação foi encontrada!";
             req.flash("error_msg", "Nenhuma informação foi encontrada.")
@@ -50,9 +42,9 @@ function list(req, res) {
             responseModel.success = true;
             responseModel.data = JSON.parse(JSON.stringify(data));
             responseModel.titulo = "Lista de Pedidos"
-            return res.render("site/listaPedido", { response: responseModel });
+            return res.render("site/pedido/listaPedido", { response: responseModel });
         } else {
-            return res.render("site/listaPedido", { response: responseModel });
+            return res.render("site/pedido/listaPedido", { response: responseModel });
             responseModel.error = "Tabela Vazia";
             return res.json(responseModel);
         }
