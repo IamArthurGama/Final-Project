@@ -1,59 +1,38 @@
 <div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
 <div class="lista" style="margin: 0px 0px"></div>
-<h3>Dados do Usuário</h3>
+<h3>Lista de Pedidos</h3>
 </div>
 <hr>
-<div>
-    <div class="card" style="width: 50%">
-        <div class="cadastro" style="margin-top: 0px;">
 
-            <div class="form-group">
-                <div class="form-label-editar">
-                    <p><strong>Nome:</strong></p>
-                </div>
-                <input type="text" name="nome" id="nome" value="{{response.data.nome}}" disabled /><br />
-            </div>
+<div class="card" style="width: 50%;">
+  <ul class="list-group list-group-flush">
 
-            <div class="form-group">
-                <div for="nome" class="form-label-editar">
-                    <p><strong> E-mail:</strong></p>
-                </div>
-                <input type="text" name="email" id="email" value="{{response.data.email}}" disabled /><br />
-            </div>
-
-            <div class="form-group">
-                <div for="nome" class="form-label-editar">
-                    <p><strong>Telefone:</strong></p>
-                </div>
-                <input type="text" name="telefone" id="telefone" value="{{response.data.telefone}}" disabled /><br />
-            </div>
-            <div class="form-group">
-                <div for="nome" class="form-label-editar">
-                    <p><strong> Endereço:</strong></p>
-                </div>
-                <input type="text" name="endereco" id="endereco" value="{{response.data.endereco}}" disabled /><br />
-            </div>
-            <div class="form-group">
-                <div for="nome" class="form-label-editar">
-                    <p><strong> Ativo:</strong></p>
-                </div>
-                <input type="text" name="ativo" id="ativo" value="{{response.data.ativo}}" disabled /><br />
-            </div>
-            <div class="form-group">
-                <div for="nome" class="form-label-editar">
-                    <p><strong> Criado em:</strong></p>
-                </div>
-                <input type="text" name="createdAt" id="createdAt" value="{{response.data.createdAt}}" disabled /><br />
-            </div>
-            <div class="form-group">
-                <div for="nome" class="form-label-editar">
-                    <p><strong> Alterado em:</strong></p>
-                </div>
-                <input type="text" name="updatedAt" id="updatedAt" value="{{response.data.updatedAt}}" disabled /><br />
-            </div>
-
-            <a href="/usuario" class="btn btn-success" style="margin-top: 10px;">Voltar</a>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="font-size:20px"><strong>Número do Pedido: </strong>98</div>
+        <div class="col" style="font-size:20px"><strong>Cliente: </strong>Zezinho do Gás</div>
+        <div class="col d-flex flex-row-reverse">
+          <a href="/usuario/find/{{id}}" class="btn btn-primary ms-2" style="font-size:20px">Detalhes</a>
         </div>
-    </div>
-</div>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col" style="font-size:20px"><strong>Número do Pedido: </strong>60</div>
+        <div class="col" style="font-size:20px"><strong>Cliente: </strong>Zezinho do Açougue</div>
+        <div class="col d-flex flex-row-reverse">
+          <a href="/usuario/find/{{id}}" class="btn btn-primary ms-2" style="font-size:20px">Detalhes</a>
+        </div>
+      </div>
+    </li>
+
+
+
+
+
+  </ul>
+</div> 
+
+
 <hr>

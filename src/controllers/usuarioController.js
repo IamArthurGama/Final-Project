@@ -49,10 +49,10 @@ function list(req, res) {
             responseModel.data = JSON.parse(JSON.stringify(data));
             responseModel.titulo = "Lista de Usuários"
             console.log(responseModel)
-            return res.render("admin/usuario/lista", { response: responseModel });
+            return res.render("site/usuario/lista", { response: responseModel });
         } else {
             responseModel.error = "Tabela Vazia";
-            return res.json(responseModel);
+            return res.json(responseModel); 
         }
 
     }).catch(error => {
@@ -89,7 +89,7 @@ function findUser(req, res) {
         if (data) {
             responseModel.success = true;
             responseModel.data = JSON.parse(JSON.stringify(data));
-            res.render("admin/usuario/perfil", { response: responseModel })
+            res.render("site/usuario/perfil", { response: responseModel })
         } else {
             responseModel.error = "Nenhuma informação foi encontrada!";
             req.flash("error_msg", "Nenhuma informação foi encontrada.")
@@ -198,7 +198,7 @@ function telaAdd(req, res) {
     criarResponse();
     responseModel.success = true;
     responseModel.titulo = "Cadastro de Usuários"
-    res.render("admin/usuario/novo", { response: responseModel });
+    res.render("site/usuario/novo", { response: responseModel });
 }
 
 function add(req,res){ 
@@ -243,7 +243,7 @@ function telaEditar(req, res) {
 function telaLogin(req, res) {
     criarResponse()
     responseModel.titulo = "Login de Usuários"
-    res.render("admin/usuario/login", { response: responseModel })
+    res.render("site/usuario/login", { response: responseModel })
 }
 
 function login(req, res) {
@@ -286,7 +286,7 @@ function telaSenha(req, res) {
     criarResponse()
     responseModel.titulo = "Mudança de senha"
     responseModel.data = req.session.user
-    res.render("admin/usuario/senha", { response: responseModel })
+    res.render("site/usuario/senha", { response: responseModel })
 }
 
 function senha(req, res) {

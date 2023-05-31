@@ -69,7 +69,7 @@ function confirm(req,res){
 
     
 
-    res.render("site/confirma", {pedido, total, frete})
+    res.render("site/cardapio/confirma", {pedido, total, frete})
 }
 
 
@@ -87,7 +87,7 @@ function deleta(req,res){
         }, 0);
         total += frete
 
-        res.render("site/confirma", {pedido, total, frete})
+        res.render("site/cardapio/confirma", {pedido, total, frete})
     }else{
         res.redirect("/cardapio")
     }
@@ -96,7 +96,7 @@ function deleta(req,res){
 function final(req,res){
     //req.flash("success_msg", "bananada")
     //res.redirect("/")
-    res.render("site/telaConfirma")
+    res.render("site/cardapio/telaConfirma")
 
 }
 
@@ -202,7 +202,7 @@ function home(req, res) {
             responseModel.success = true;
             responseModel.data = JSON.parse(JSON.stringify(data));
             req.session.cardapio = responseModel.data
-            return res.render("./site/cardapio", { response: responseModel });
+            return res.render("./site/cardapio/cardapio", { response: responseModel });
         } else {
             responseModel.error = "Tabela Vazia";
             return res.json(responseModel);
