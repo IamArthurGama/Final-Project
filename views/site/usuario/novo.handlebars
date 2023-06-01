@@ -27,6 +27,27 @@
         <div class="form-group">
           <input type="password" id="password" name="senha" placeholder="Digite sua senha" required>
         </div>
+
+  {{#if user.adm}}
+        <div>
+    <input type = "checkbox" id = "ativoAdm" name = "ativoAdm" value="0">
+    <label for = "ativoAdm">Cliente</label>
+  </div>
+
+  <div>
+    <input type = "checkbox" id = "ativoAdm" name = "ativoAdm" value="1">
+    <label for = "ativoAdm">Administrador</label>
+  </div>
+
+  <div>
+    <input type = "checkbox" id = "ativoAdm" name = "ativoAdm" value="2">
+    <label for = "ativoAdm">Funcionário</label>
+  </div>
+   {{/if}}
+
+
+
+
         <div class="form-group">
           <button type="submit">Cadastrar</button>
         </div>

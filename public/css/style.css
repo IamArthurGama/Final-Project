@@ -741,7 +741,7 @@ color: rgb(255, 255, 255);
    text-align: center;
     font-size: 50px;
     margin: 0px 0px 90px;
-    color: rgb(255, 255, 255);;
+    color: rgb(255, 255, 255);
     font-weight: 200;
     font-family: 'Montserrat', sans-serif; 
   }
@@ -760,6 +760,15 @@ color: rgb(255, 255, 255);
     font-size: 16px;
     background: transparent;
     color: #fff;
+  }
+
+
+
+
+  label{
+    color:rgb(141, 141, 141);
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
   }
 
 

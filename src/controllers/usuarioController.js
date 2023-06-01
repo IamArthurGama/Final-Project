@@ -258,7 +258,15 @@ function login(req, res) {
         if (data.length > 0) {
             responseModel.success = true
             responseModel.data = JSON.parse(JSON.stringify(data))
-            responseModel.data.ativoAdm = responseModel.data.ativoAdm == 1?true:false
+
+            if(responseModel.data[0].ativoAdm>0){
+                responseModel.data[0].adm = responseModel.data[0].ativoAdm == 1?true:false
+                responseModel.data[0].ativoAdm = true;
+            }else{
+                responseModel.data[0].ativoAdm = false;
+            }
+            
+            
             req.session.user = responseModel.data[0]
             if(req.session.destino == "finalizar"){
                 res.redirect("/cardapio/finalizar")

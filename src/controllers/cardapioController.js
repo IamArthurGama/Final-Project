@@ -205,14 +205,20 @@ function home(req, res) {
             return res.render("./site/cardapio/cardapio", { response: responseModel });
         } else {
             responseModel.error = "Tabela Vazia";
-            return res.json(responseModel);
+
+            //////////////////////////////
+
+            ////////////////////////////////criar uma tela de error
+
+            //////////////////////////////
+            res.redirect("/")
         }
 
     }).catch(error => {
         responseModel.error = error;
         return res.json(responseModel);
     });
-}
+}   
 
 function remove(req,res){
     criarResponse();
@@ -231,7 +237,7 @@ function remove(req,res){
             }).catch(error => {
                 responseModel.error = error;
                 req.flash("error_msg", "Nenhuma informação foi encontrada.")
-                res.redirect("/cardapi/list")
+                res.redirect("/cardapio/list")
             });
         } else {
             responseModel.error = "Nenhuma informação foi encontrada!";

@@ -28,7 +28,7 @@ module.exports = (sequelize, Sequelize) => {
 		},
 		ativoAdm: {
 			allowNull: false,
-			type: Sequelize.BOOLEAN,
+			type: Sequelize.INTEGER,
             defaultValue:false,
 		},
         ativo: {

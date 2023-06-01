@@ -26,13 +26,15 @@
         <div class="col">{{nome}}</div>
         <div class="col">{{preco}}</div>
         <div class="col d-flex flex-row-reverse">
+          {{#if ../user.adm}}
           <a href="/cardapio/remove/{{id}}" class="btn btn-danger ms-2">Deletar</a>
           <a href="/cardapio/update/{{id}}" class="btn btn-success ms-2">Editar</a>
+          {{/if}}
           <a href="/cardapio/find/{{id}}" class="btn btn-primary ms-2">Detalhes</a>
         </div>
       </div>
     </li>
-    {{else}}
+    {{else}} 
     <div class="m-5">
       <h5>Sem itens cadastrados.</h5>
     </div>
