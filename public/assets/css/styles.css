@@ -9,10 +9,10 @@
   --first-color-lighten: hsl(220, 68%, 97%);
   --title-color: hsl(220, 48%, 28%);
   --text-color: hsl(220, 12%, 45%);
-  --body-color: #f86e04;
+  --body-color: hsl(220, 100%, 99%);
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: 'Montserrat', sans-serif;
+  --body-font: "Poppins", sans-serif;
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
@@ -38,7 +38,12 @@
   margin: 0;
 }
 
-
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
 
 ul {
   list-style: none;
@@ -61,7 +66,7 @@ a {
   left: 0;
   width: 100%;
   box-shadow: 0 2px 8px hsla(220, 68%, 12%, 0.1);
-  background-color:var(--body-color);
+  background-color: hsl(26.1,96.8%,49.4%);
   z-index: var(--z-fixed);
 }
 
