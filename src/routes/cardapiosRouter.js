@@ -32,4 +32,5 @@ router.post('/remove/:id', util.vef, controler.remove);
 
 router.get('/:id',controler.deleta)
 
+
 module.exports = router;

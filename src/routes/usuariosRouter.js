@@ -28,4 +28,9 @@ router.get("/logout",controler.logout)
 router.get("/senha", util.vef, controler.telaSenha)
 router.post("/senha", util.vef, controler.senha)
 
+
+router.get('/erro', (req,res)=>{
+    res.render("site/error")
+})
+
 module.exports = router;

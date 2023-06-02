@@ -159,12 +159,12 @@ function listSite(req, res) {
     res.render("index",{response: responseModel}); 
         } else {
             responseModel.error = "Tabela Vazia";
-            return res.json(responseModel);
+            res.redirect("usuario/erro")
         }
 
     }).catch(error => {
         responseModel.error = error;
-        return res.json(responseModel);
+        res.render("/site/erro")
     });
 }
 
@@ -211,12 +211,12 @@ function home(req, res) {
             ////////////////////////////////criar uma tela de error
 
             //////////////////////////////
-            res.redirect("/")
+            res.redirect("/usuario/erro")
         }
 
     }).catch(error => {
         responseModel.error = error;
-        return res.json(responseModel);
+        res.redirect("/usuario/erro")
     });
 }   
 

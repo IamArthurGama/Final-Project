@@ -11,13 +11,12 @@
 
 <div class="lista" style="margin-top:-200px ;">
   <div class="form-group" style="margin-top:0px ;">
-     {{#each response.data}}
-      {{#if ../user.adm}}
-       <a href="/cardapio/add"><button>Cadastrar Lanches</button></a>
-       {{else}}
-    <a href="/"><button>Ir para a tela de inicial</button></a>
+    
+      {{#if user.adm}}
+    <a href="/cardapio/add"><button>Adicionar Lanches</button></a>
+    {{else}}
+     <a href="/"><button>Ir para a tela de inicial</button></a>
     {{/if}}
-       {{/each}}
    
   </div>
 </div>
