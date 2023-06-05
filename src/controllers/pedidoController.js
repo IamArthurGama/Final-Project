@@ -45,13 +45,14 @@ function list(req, res) {
             return res.render("site/pedido/listaPedido", { response: responseModel });
         } else {
             return res.render("site/pedido/listaPedido", { response: responseModel });
-            responseModel.error = "Tabela Vazia";
-            return res.json(responseModel);
+            //req.flash("error_msg", "Nenhuma informação foi encontrada.")
+            //res.redirect("/")
         }
 
     }).catch(error => {
         responseModel.error = error;
-        return res.json(responseModel);
+        req.flash("error_msg", "Nenhuma informação foi encontrada.")
+        res.redirect("/")
     });
 }
 

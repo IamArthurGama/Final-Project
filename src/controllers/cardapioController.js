@@ -132,12 +132,13 @@ function list(req, res) {
             return res.render("admin/cardapio/lista", { response: responseModel });
         } else {
             responseModel.error = "Tabela Vazia";
-            return res.json(responseModel);
+            req.flash("error_msg", "Nenhuma informação foi encontrada.")
+            res.redirect("/")
         }
 
     }).catch(error => {
         responseModel.error = error;
-        return res.json(responseModel);
+        res.redirect("/")
     });
 }
 
@@ -187,7 +188,7 @@ function add(req,res){
             res.redirect("/cardapio/list")
         }).catch(error => {
             responseModel.error = error;
-            res.json(responseModel)
+            res.redirect("/")
         });
     }
 }
