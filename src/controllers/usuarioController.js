@@ -43,7 +43,11 @@ function vefPreenchimentoEditar(req, res) {
 
 function list(req, res) {
     criarResponse();
-    Modelo.findAll().then(data => {
+    Modelo.findAll({
+        order:[
+            ['nome', 'ASC']
+        ]
+    }).then(data => {
         if (data.length > 0) {
             responseModel.success = true;
             responseModel.data = JSON.parse(JSON.stringify(data));

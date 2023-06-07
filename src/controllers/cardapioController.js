@@ -83,9 +83,10 @@ function deleta(req,res){
         req.session.cardapio = pedido
 
         total = pedido.reduce((total, itemPedido) => {
-            return (total + itemPedido.total);
+            return (total + itemPedido.total*1);
         }, 0);
         total += frete
+        total = total.toFixed(2).replace(".",",");
 
         res.render("site/cardapio/confirma", {pedido, total, frete})
     }else{
