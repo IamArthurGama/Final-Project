@@ -53,7 +53,7 @@ function list(req, res) {
             responseModel.data = JSON.parse(JSON.stringify(data));
             responseModel.titulo = "Lista de Usuários"
             console.log(responseModel)
-            return res.render("site/usuario/lista", { response: responseModel });
+            return res.render("admin/usuario/lista", { response: responseModel });
         } else {
             responseModel.error = "Tabela Vazia";
             req.flash("error_msg", "Nenhuma informação foi encontrada.")

@@ -836,7 +836,12 @@ label p {
 
 
 
-
+#searchbar{
+  margin:10px auto;
+  width:60%;
+  background-color: #2e2e2e;
+  border-radius: 5px;
+}
 
 
 

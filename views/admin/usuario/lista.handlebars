@@ -19,7 +19,9 @@
 
 
 <div class="card">
-  <ul class="list-group list-group-flush">
+  <input id="searchbar" onkeyup="search()" type="text"
+    name="search" placeholder="Pesquise o usuário">
+  <ul id="list" class="list-group list-group-flush">
     {{#each response.data}}
     <li class="list-group-item">
       <div class="row">
@@ -43,3 +45,20 @@
 
   </ul>
 </div> 
+
+<script>
+  function search() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('list-group-item');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="list-item";                 
+        }
+    }
+}
+</script>
