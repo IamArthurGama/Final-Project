@@ -849,8 +849,8 @@ label p {
 }
 
 #searchbar:focus{
-  outline: #6a6a6a;
-  border: 2px solid #6a6a6a ;
+  outline: #8a8a8a;
+  border: 2px solid #8a8a8a;
 }
 
 
