@@ -5,7 +5,9 @@
 <hr>
 
 <div class="card" style="width: 50%;">
-  <ul class="list-group list-group-flush">
+  <input id="searchbar" onkeyup="search()" type="text"
+    name="search" placeholder="Pesquise o pedido">
+  <ul id="list" class="list-group list-group-flush">
 
     <li class="list-group-item">
       <div class="row">
@@ -20,7 +22,7 @@
     <li class="list-group-item">
       <div class="row">
         <div class="col" style="font-size:20px"><strong>Número do Pedido: </strong>60</div>
-        <div class="col" style="font-size:20px"><strong>Cliente: </strong>Zezinho do Açougue</div>
+        <div class="col" style="font-size:20px"><strong>Cliente: </strong>Junior</div>
         <div class="col d-flex flex-row-reverse">
           <a href="/usuario/find/{{id}}" class="btn btn-primary ms-2" style="font-size:20px">Detalhes</a>
         </div>
