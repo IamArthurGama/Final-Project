@@ -7,10 +7,12 @@ function vef(req, res, next){
 }
 
 function vefN(req, res, next){
-    if(req.session.user.ativoAdm==1){
+    console.log(req.session.user.adm)
+    if(req.session.user.adm==1){
         next();
     }else{
-        res.redirect("/cardapio")
+        req.flash("error_msg", "Acesso negado")
+        res.redirect("/")
     }
 }
 
