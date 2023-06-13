@@ -19,8 +19,8 @@ router.get('/final', (req,res)=>{
 
 router.get('/finalizar', controler.final)
 
-router.get('/add',controler.telaAdd);
-router.post('/add',controler.add);
+router.get('/add',util.vefN,controler.telaAdd);
+router.post('/add',util.vefN,controler.add);
 
 router.get('/find/:id', util.vef, controler.findById);
 

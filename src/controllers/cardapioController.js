@@ -126,6 +126,8 @@ function findById(req, res) {
 function list(req, res) {
     criarResponse();
     Modelo.findAll().then(data => {
+        if (req.session.user.ativoAdm > 0){
+
         if (data.length > 0) {
             responseModel.success = true;
             responseModel.data = JSON.parse(JSON.stringify(data));
@@ -136,6 +138,11 @@ function list(req, res) {
             req.flash("error_msg", "Nenhuma informação foi encontrada.")
             res.redirect("/")
         }
+    }else{
+        responseModel.error = "Acesso Negado";
+        req.flash("error_msg", "Acesso Negado.")
+        res.redirect("/")
+    }
 
     }).catch(error => {
         responseModel.error = error;
@@ -173,26 +180,33 @@ function listSite(req, res) {
 
 function telaAdd(req, res) {
     criarResponse();
+    if (!req.session.user.ativoAdm == 1){
+        responseModel.error = "Acesso Negado";
+        req.flash("error_msg", "Acesso Negado.")
+        res.redirect("/")
+    }else{
     responseModel.success = true;
     responseModel.titulo = "Cadastro de Cardápio"
     res.render("admin/cardapio/novo", { response: responseModel });
+    }
 }
 
 function add(req,res){
     criarResponse();
     modelo = vefPreenchimento(req,res);
-    if(modelo){
+        if(modelo){
         Modelo.create(modelo).then(data => {
             responseModel.success = true;
             responseModel.data = data;
             /*res.json(responseModel)*/
             res.redirect("/cardapio/list")
-        }).catch(error => {
+            }).catch(error => {
             responseModel.error = error;
             res.redirect("/")
-        });
+            });
+        } 
     }
-}
+
 
 
 
