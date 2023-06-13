@@ -24,11 +24,11 @@ router.post('/add',util.vef,util.vefN,controler.add);
 
 router.get('/find/:id', util.vef, controler.findById);
 
-router.get('/update/:id', util.vef, controler.telaEditar);
-router.post('/update/:id', util.vef, controler.update);
+router.get('/update/:id', util.vef,util.vefN, controler.telaEditar);
+router.post('/update/:id', util.vef,util.vefN, controler.update);
 
-router.get('/remove/:id', util.vef, controler.telaRemove);
-router.post('/remove/:id', util.vef, controler.remove);
+router.get('/remove/:id', util.vef,util.vefN, controler.telaRemove);
+router.post('/remove/:id', util.vef,util.vefN, controler.remove);
 
 router.get('/:id',controler.deleta)
 

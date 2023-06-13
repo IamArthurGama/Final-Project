@@ -7,8 +7,16 @@ function vef(req, res, next){
 }
 
 function vefN(req, res, next){
-    console.log(req.session.user.adm)
     if(req.session.user.adm==1){
+        next();
+    }else{
+        req.flash("error_msg", "Acesso negado")
+        res.redirect("/")
+    }
+}
+
+function vefG(req, res, next){
+    if(!req.session.user.ativoAdm==0){
         next();
     }else{
         req.flash("error_msg", "Acesso negado")
@@ -18,4 +26,4 @@ function vefN(req, res, next){
 
 
 
-module.exports = { vef, vefN }
+module.exports = { vef, vefN, vefG }
