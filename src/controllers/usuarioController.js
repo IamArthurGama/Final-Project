@@ -90,6 +90,45 @@ function findById(req, res) {
 
 function findUser(req, res) {
     criarResponse();
+
+    const id = req.session.user.id;
+    Modelo.findByPk(id).then(data => {
+        if (data) {
+            const data = sequelize.query('select idPedido, nomeCliente from listaPedidos group by idPedido order by createdAt desc;');
+            responseModel.success = true;
+            responseModel.data = JSON.parse(JSON.stringify(data[0]));
+            responseModel.titulo = "Lista de Pedidos"
+            return res.render("site/usuario/perfil", { response: responseModel });
+        } else {
+            return res.render("site/usuario/perfil", { response: responseModel });
+            responseModel.error = "Nenhuma informação foi encontrada!";
+            req.flash("error_msg", "Nenhuma informação foi encontrada.")
+            res.redirect("/usuario")
+        }
+
+    }).catch(error => {
+        return res.render("site/usuario/perfil", { response: responseModel });
+        responseModel.error = error;
+        req.flash("error_msg", "Nenhuma informação foi encontrada.")
+        res.redirect("/usuario")
+    });
+
+    /*try{
+        const id = await id.findByPk(req.session.user.id);
+        const data = await sequelize.query('select idPedido, nomeCliente from listaPedidos group by idPedido order by createdAt desc;');
+        responseModel.success = true;
+        responseModel.data = JSON.parse(JSON.stringify(data[0]));
+        responseModel.titulo = "Lista de Pedidos"
+        return res.render("site/usuario/perfil", { response: responseModel });
+    }catch(error){
+        return res.render("site/usuario/perfil", { response: responseModel });
+        responseModel.error = error;
+        req.flash("error_msg", "Nenhuma informação foi encontrada.")
+        res.redirect("/") 
+    }*/
+
+
+    /*
     const id = req.session.user.id;
     Modelo.findByPk(id).then(data => {
         if (data) {
@@ -106,7 +145,7 @@ function findUser(req, res) {
         responseModel.error = error;
         req.flash("error_msg", "Nenhuma informação foi encontrada.")
         res.redirect("/usuario")
-    });
+    });*/
 }
 
 function telaRemove(req, res) {
