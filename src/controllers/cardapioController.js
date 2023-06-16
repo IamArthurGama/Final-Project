@@ -1,9 +1,8 @@
 const { json } = require("body-parser");
 const db = require("../models");
 const Modelo = db.Cardapio;
+const Pedido = db.Pedido;
 const Op = db.Sequelize.Op;
-const md5 = require('md5');
-const { response } = require("express");
 
 const qtdaListaPrincipal = 3
 const frete = 10
@@ -95,10 +94,34 @@ function deleta(req,res){
 }
 
 function final(req,res){
-    //req.flash("success_msg", "bananada")
-    //res.redirect("/")
-    res.render("site/cardapio/telaConfirma")
+    if (req.session.user){
+        if(req.session.cardapio){
+            try{
+                itens = req.session.cardapio
+                pedido = Math.floor(Date.now() * Math.random()).toString(10)
+                itens.forEach(element => { 
+                    linha = {}
+                    linha.idPedido = pedido
+                    linha.idUsuario = req.session.user.id
+                    linha.idCardapio = element.id
+                    linha.qtda = element.qtda
 
+                    data = Pedido.create(linha);                
+                })
+                delete req.session.cardapio
+                res.render("site/cardapio/telaConfirma")
+            }catch(error){
+                console.log(error)
+                res.redirect("/cardapio")
+            }
+
+        }else{
+            res.redirect("/cardapio")   
+        }
+    }else{
+        req.session.destino="finalizar"
+        res.redirect("/usuario/login")
+    }    
 }
 
 

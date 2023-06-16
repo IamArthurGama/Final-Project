@@ -4,6 +4,8 @@ var controler = require("../controllers/pedidoController")
 const util = require("../utilidades/util")
 
 router.get('/', util.vef, util.vefG, controler.list)
+router.get('/find/:id', util.vef, util.vefG, controler.findById)
+
 router.get('/detalhe', (req,res)=>{
     res.render("site/pedido/detalhe")
 })

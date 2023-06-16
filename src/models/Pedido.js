@@ -1,31 +1,36 @@
 module.exports = (sequelize, Sequelize) => {
 	const Pedido = sequelize.define('pedido', {
-		idPedido: {
+		id: {
 			allowNull: false,
 			autoIncrement: true,
 			primaryKey: true,
 			type: Sequelize.INTEGER
+		},
+
+		idPedido: {
+			allowNull: false,
+			type: Sequelize.STRING
 		},										//id usuario, id cliente, quantidade
-		nome: {
+
+		idUsuario: {
+			type: Sequelize.INTEGER,
 			allowNull: false,
-			type: Sequelize.STRING,
 		},
-        endereco: {
+
+		idCardapio: {
+			type: Sequelize.INTEGER,
 			allowNull: false,
-			type: Sequelize.STRING,
 		},
-        formaPagamento: {
-			allowNull: false,
-			type: Sequelize.ENUM("CREDITO","DEBITO","PIX","DINHEIRO"),
+
+		qtda: {
+			type: Sequelize.INTEGER,
 		},
-		valorEntrega: {
-			allowNull: false,
-			type: Sequelize.FLOAT,
+
+		status: {
+			type: Sequelize.INTEGER,
+			defaultValue: 0,
 		},
-		entrega: {
-			allowNull: false,
-			type: Sequelize.BOOLEAN
-		},
+
         ativo: {
 			allowNull: false,
 			type: Sequelize.BOOLEAN,

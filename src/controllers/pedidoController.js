@@ -1,10 +1,6 @@
-const { json } = require("body-parser");
 const db = require("../models");
 const Modelo = db.Pedido;
-const Op = db.Sequelize.Op;
-const md5 = require('md5');
-const { response } = require("express");
-
+const sequelize = db.sequelize;
 
 const responseModel = {}
 function criarResponse(){
@@ -14,46 +10,37 @@ function criarResponse(){
 }
 criarResponse();
  
-function findById(req, res) {
+async function findById(req, res) {
     criarResponse();
     const id = req.params.id;
-    Modelo.findByPk(id).then(data => {
-        if (data) {
-            responseModel.success = true;
-            responseModel.data = JSON.parse(JSON.stringify(data));
-            res.render("site/pedido/detalhe", { response: responseModel })
-        } else {
-            responseModel.error = "Nenhuma informação foi encontrada!";
-            req.flash("error_msg", "Nenhuma informação foi encontrada.")
-            res.redirect("/cardapio/list")
-        }
-
-    }).catch(error => {
-        responseModel.error = error;
-        req.flash("error_msg", "Nenhuma informação foi encontrada.")
-        res.redirect("/cardapio/list")
-    });
-}
-
-function list(req, res) {
     criarResponse();
-    Modelo.findAll().then(data => {
-        if (data.length > 0) {
-            responseModel.success = true;
-            responseModel.data = JSON.parse(JSON.stringify(data));
-            responseModel.titulo = "Lista de Pedidos"
-            return res.render("site/pedido/listaPedido", { response: responseModel });
-        } else {
-            return res.render("site/pedido/listaPedido", { response: responseModel });
-            //req.flash("error_msg", "Nenhuma informação foi encontrada.")
-            //res.redirect("/")
-        }
-
-    }).catch(error => {
+    try{
+        const data = await sequelize.query(`select nomeCardapio, preco, qtda, total, status, endereco, telefone, nomeCliente from listapedidos where idPedido = ${id}`);
+        responseModel.success = true;
+        responseModel.data = JSON.parse(JSON.stringify(data[0]));
+        responseModel.titulo = "detalhes de Pedidos"
+        
+        return res.render("site/pedido/detalhe", { response: responseModel });
+    }catch(error){
         responseModel.error = error;
         req.flash("error_msg", "Nenhuma informação foi encontrada.")
         res.redirect("/")
-    });
+    }
+}
+
+async function list(req, res) {
+    criarResponse();
+    try{
+        const data = await sequelize.query('select idPedido, nomeCliente from listaPedidos group by idPedido order by createdAt desc;');
+        responseModel.success = true;
+        responseModel.data = JSON.parse(JSON.stringify(data[0]));
+        responseModel.titulo = "Lista de Pedidos"
+        return res.render("site/pedido/listaPedido", { response: responseModel });
+    }catch(error){
+        responseModel.error = error;
+        req.flash("error_msg", "Nenhuma informação foi encontrada.")
+        res.redirect("/")
+    }
 }
 
 

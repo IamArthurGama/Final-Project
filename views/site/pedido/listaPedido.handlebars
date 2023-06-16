@@ -8,30 +8,21 @@
   <input id="searchbar" onkeyup="search()" type="text"
     name="search" placeholder="Pesquise o pedido">
   <ul id="list" class="list-group list-group-flush">
-
+    {{#each response.data}}
     <li class="list-group-item">
       <div class="row">
-        <div class="col" style="font-size:20px"><strong>Número do Pedido: </strong>98</div>
-        <div class="col" style="font-size:20px"><strong>Cliente: </strong>Zezinho do Gás</div>
+        <div class="col" style="font-size:20px"><strong>Número do Pedido: </strong>{{idPedido}}</div>
+        <div class="col" style="font-size:20px"><strong>Cliente: </strong>{{nomeCliente}}</div>
         <div class="col d-flex flex-row-reverse">
-          <a href="/pedido/find/{{id}}" class="btn btn-primary ms-2" style="font-size:20px">Detalhes</a>
+          <a href="/pedido/find/{{idPedido}}" class="btn btn-primary ms-2" style="font-size:20px">Detalhes</a>
         </div>
       </div>
     </li>
-
-    <li class="list-group-item">
-      <div class="row">
-        <div class="col" style="font-size:20px"><strong>Número do Pedido: </strong>60</div>
-        <div class="col" style="font-size:20px"><strong>Cliente: </strong>Junior</div>
-        <div class="col d-flex flex-row-reverse">
-          <a href="/usuario/find/{{id}}" class="btn btn-primary ms-2" style="font-size:20px">Detalhes</a>
-        </div>
-      </div>
-    </li>
-
-
-
-
+    {{else}}
+    <div class="m-5">
+      <h5>Sem itens cadastrados.</h5>
+    </div>
+    {{/each}}
 
   </ul>
 </div> 
