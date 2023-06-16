@@ -5,26 +5,36 @@
 <hr>
 <div>
     <div class="card" style="width: 90%">
-      
-        <p>Nome Cliente: 234234 {{nomeCliente}}</p>
-       <p>     numero pedido: 234234 {{idPedido}}</p>
-       <p> endereco: 234234 {{endereco}}</p>
-        <p>telefone: 54452 {{telefone}}</p>
-        <p>Total: 234234{{total}}</p>
-
+        <div style="display: grid;
+  grid-template-columns: 50% 50%;justify-content:center">
         
+        <div class="dadosFixos">
+            <h3 style="margin: 2%;font-size:40px">Informações do Pedido</h3>
+            <p><strong>N° Pedido:&nbsp; </strong> 234234 {{idPedido}}</p>
+            <p><strong>Total:&nbsp;</strong> 234234{{total}}</p>
+            <p><strong>Data:&nbsp;</strong> 234234{{total}}</p>
+        </div>
         
+        <div class="dadosFixos">
+            <h3 style="margin: 2%;font-size:40px">Informações do Cliente</h3>
+            <p><strong>Cliente:&nbsp; </strong> 234234 {{nomeCliente}}</p>
+            <p><strong>telefone:&nbsp;</strong> 54452 {{telefone}}</p>
+            <p><strong>Endereco:&nbsp;</strong> 234234 {{endereco}}</p>
+        </div>
+        </div>
 
+
+        <h3 style="margin: 2%;font-size:40px;margin-top:4%">Itens do Pedido</h3>
 
         <ul id="list" class="list-group list-group-flush">
             {{#each response.data}}
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col">Nome do Lanche:{{nomeCardapio}}</div>
-                    <div class="col">Quantidade:{{qtda}}</div>
-                    <div class="col">Preço:{{preco}}</div>
-                    <div class="col">Status:{{status}}</div>
-                    
+            <li class="list-group-item" style="width: 85%; margin:10px auto;border-radius:5px">
+                <div class="row" style="padding: 10px;border-radius:5px">
+                    <div class="col"><strong>Nome do Lanche:&nbsp;</strong>{{nomeCardapio}}</div>
+                    <div class="col"><strong>Quantidade:</strong>&nbsp;{{qtda}}</div>
+                    <div class="col"><strong>Preço:</strong>&nbsp;{{preco}}</div>
+                    <div class="col"><strong>Status:</strong>&nbsp;{{status}}</div>
+
             </li>
             {{else}}
             <div class="m-5">
@@ -35,8 +45,8 @@
 
 
         </ul>
-        <div class="col d-flex flex-row-reverse">
-          <a href="#" class="btn btn-primary ms-2" style="font-size:20px">Finalizar</a>
+        <div class="col d-flex flex-row-reverse" style="margin:20px">
+            <a href="#" class="btn btn-primary ms-2" style="font-size:20px" id="status" name="">Finalizar</a>
         </div>
 
 
@@ -44,7 +54,7 @@
 
 
 
-        <a href="/pedido/" class="btn btn-success" style="margin-top: 10px;">Voltar</a>
+        <a href="/pedido/" class="btn btn-success" style="margin: 20px 10px;">Voltar</a>
     </div>
 </div>
 </div>

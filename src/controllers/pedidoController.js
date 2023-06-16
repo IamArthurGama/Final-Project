@@ -11,7 +11,7 @@ function criarResponse(){
 criarResponse();
  
 async function findById(req, res) {
-    criarResponse();
+    criarResponse(); 
     const id = req.params.id;
     criarResponse();
     try{
@@ -39,7 +39,7 @@ async function list(req, res) {
     }catch(error){
         responseModel.error = error;
         req.flash("error_msg", "Nenhuma informação foi encontrada.")
-        res.redirect("/")
+        res.redirect("/") 
     }
 }
 

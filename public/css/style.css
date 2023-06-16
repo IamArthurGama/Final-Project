@@ -854,6 +854,18 @@ label p {
 }
 
 
+.dadosFixos{
+  display: grid;
+  grid-template-columns: 70%;
+  justify-content: center;
+  margin-top: 30px;
+}
 
+.dadosFixos p{
+  background-color: #282828;
+  padding: 20px;
+  margin: 5px 10px;
+  border-radius: 5px;
+}
 
 
