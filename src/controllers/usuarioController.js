@@ -1,9 +1,8 @@
-const { json } = require("body-parser");
 const db = require("../models");
 const Modelo = db.Usuario;
 const Op = db.Sequelize.Op;
 const md5 = require('md5');
-const { response } = require("express");
+const sequelize = db.sequelize;
 
 const responseModel = {}
 function criarResponse(){
@@ -52,7 +51,6 @@ function list(req, res) {
             responseModel.success = true;
             responseModel.data = JSON.parse(JSON.stringify(data));
             responseModel.titulo = "Lista de Usuários"
-            console.log(responseModel)
             return res.render("admin/usuario/lista", { response: responseModel });
         } else {
             responseModel.error = "Tabela Vazia";
@@ -88,64 +86,27 @@ function findById(req, res) {
     });
 }
 
-function findUser(req, res) {
-    criarResponse();
-
+async function findUser(req, res) {
     const id = req.session.user.id;
-    Modelo.findByPk(id).then(data => {
-        if (data) {
-            const data = sequelize.query('select idPedido, nomeCliente from listaPedidos group by idPedido order by createdAt desc;');
-            responseModel.success = true;
-            responseModel.data = JSON.parse(JSON.stringify(data[0]));
-            responseModel.titulo = "Lista de Pedidos"
-            return res.render("site/usuario/perfil", { response: responseModel });
-        } else {
-            return res.render("site/usuario/perfil", { response: responseModel });
-            responseModel.error = "Nenhuma informação foi encontrada!";
-            req.flash("error_msg", "Nenhuma informação foi encontrada.")
-            res.redirect("/usuario")
-        }
-
-    }).catch(error => {
-        return res.render("site/usuario/perfil", { response: responseModel });
-        responseModel.error = error;
-        req.flash("error_msg", "Nenhuma informação foi encontrada.")
-        res.redirect("/usuario")
-    });
-
-    /*try{
-        const id = await id.findByPk(req.session.user.id);
-        const data = await sequelize.query('select idPedido, nomeCliente from listaPedidos group by idPedido order by createdAt desc;');
-        responseModel.success = true;
-        responseModel.data = JSON.parse(JSON.stringify(data[0]));
-        responseModel.titulo = "Lista de Pedidos"
-        return res.render("site/usuario/perfil", { response: responseModel });
-    }catch(error){
-        return res.render("site/usuario/perfil", { response: responseModel });
-        responseModel.error = error;
-        req.flash("error_msg", "Nenhuma informação foi encontrada.")
-        res.redirect("/") 
-    }*/
-
-
-    /*
-    const id = req.session.user.id;
-    Modelo.findByPk(id).then(data => {
+    try{
+        data = await Modelo.findByPk(id)
         if (data) {
             responseModel.success = true;
             responseModel.data = JSON.parse(JSON.stringify(data));
-            res.render("site/usuario/perfil", { response: responseModel })
+            const listaPedidos = await sequelize.query(`select * from listapedidos where idUsuario = ${responseModel.data.id} group by idPedido`);
+            responseModel.listaPedidos = JSON.parse(JSON.stringify(listaPedidos[0]));
+            console.log(responseModel.listaPedidos)
+            res.render("site/usuario/perfil", { response: responseModel })    
         } else {
             responseModel.error = "Nenhuma informação foi encontrada!";
             req.flash("error_msg", "Nenhuma informação foi encontrada.")
             res.redirect("/usuario")
         }
-
-    }).catch(error => {
+    }catch(error){
         responseModel.error = error;
         req.flash("error_msg", "Nenhuma informação foi encontrada.")
         res.redirect("/usuario")
-    });*/
+    }
 }
 
 function telaRemove(req, res) {
