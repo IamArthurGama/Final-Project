@@ -47,7 +47,7 @@ async function findById(req, res) {
         
 
         responseModel.cliente = cliente
-        responseModel.titulo = "detalhes de Pedidos"
+        responseModel.titulo = "Detalhes de Pedidos"
         
         return res.render("site/pedido/detalhe", { response: responseModel });
     }catch(error){
