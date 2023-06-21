@@ -10,16 +10,16 @@
         
         <div class="dadosFixos">
             <h3 style="margin: 2%;font-size:40px">Informações do Pedido</h3>
-            <p><strong>N° Pedido:&nbsp; </strong> 234234 {{idPedido}}</p>
-            <p><strong>Total:&nbsp;</strong> 234234{{total}}</p>
-            <p><strong>Data:&nbsp;</strong> 234234{{total}}</p>
+            <p><strong>N° Pedido:&nbsp; </strong>  {{response.cliente.idPedido}}</p>
+            <p><strong>Total:&nbsp;</strong>R$ {{response.cliente.total}}</p>
+            <p><strong>Data:&nbsp;</strong> {{response.cliente.createdAt}}</p>
         </div>
         
         <div class="dadosFixos">
             <h3 style="margin: 2%;font-size:40px">Informações do Cliente</h3>
-            <p><strong>Cliente:&nbsp; </strong> 234234 {{nomeCliente}}</p>
-            <p><strong>telefone:&nbsp;</strong> 54452 {{telefone}}</p>
-            <p><strong>Endereco:&nbsp;</strong> 234234 {{endereco}}</p>
+            <p><strong>Cliente:&nbsp; </strong>  {{response.cliente.nome}}</p>
+            <p><strong>Telefone:&nbsp;</strong>  {{response.cliente.telefone}}</p>
+            <p><strong>Endereço:&nbsp;</strong>  {{response.cliente.endereco}}</p>
         </div>
         </div>
 
@@ -30,10 +30,10 @@
             {{#each response.data}}
             <li class="list-group-item" style="width: 85%; margin:10px auto;border-radius:5px">
                 <div class="row" style="padding: 10px;border-radius:5px">
-                    <div class="col"><strong>Nome do Lanche:&nbsp;</strong>{{nomeCardapio}}</div>
-                    <div class="col"><strong>Quantidade:</strong>&nbsp;{{qtda}}</div>
-                    <div class="col"><strong>Preço:</strong>&nbsp;{{preco}}</div>
-                    <div class="col"><strong>Status:</strong>&nbsp;{{status}}</div>
+                    <div class="col" style="text-align: center;"><strong>Nome do Lanche:&nbsp;</strong>{{nomeCardapio}}</div>
+                    <div class="col" style="text-align: center;"><strong>Quantidade:</strong>&nbsp;{{qtda}}</div>
+                    <div class="col" style="text-align: center;"><strong>Preço:</strong>&nbsp;R$ {{preco}}</div>
+                    <!--<div class="col"><strong>Status:</strong>&nbsp;{{status}}</div>-->
 
             </li>
             {{else}}
@@ -45,7 +45,16 @@
 
 
         </ul>
-        <div class="col d-flex flex-row-reverse" style="margin:20px">
+       
+
+
+
+
+                
+  <!--{{#if user.adm}}
+
+
+ <div class="col d-flex flex-row-reverse" style="margin:20px">
             <a href="#" class="btn btn-primary ms-2" style="font-size:20px" id="status" name="">Finalizar</a>
         </div>
 
@@ -53,9 +62,40 @@
 
 
 
+  <form method="get">
+        <div class="col d-flex flex-row-reverse" style="margin:20px">
+    <input type = "checkbox" id = "status" name = "status" value="0">
+    <label for = "ativoAdm">Em processo</label>
+  </div>
 
+  <div class="col d-flex flex-row-reverse" style="margin:20px">
+    <input type = "checkbox" id = "status" name = "status" value="1">
+    <label for = "ativoAdm">Finalizado</label>
+  </div>
+
+   <div class="form-group">
+          <button type="submit">Finalizar</button>
+        </div>
+
+      </form>
+   {{/if}}-->
+
+
+
+
+
+
+
+{{#if user.adm}}
         <a href="/pedido/" class="btn btn-success" style="margin: 20px 10px;">Voltar</a>
+        {{else}}
+        <a href="/usuario/perfil" class="btn btn-success" style="margin: 20px 10px;">Voltar</a>
+        {{/if}}
     </div>
 </div>
 </div>
 <hr>
+
+<script>
+
+</script>

@@ -5,6 +5,12 @@
     <div class="lista" style="margin-bottom: 30px;">
         <h3 style="margin-bottom: 0px">Seja bem vindo(a) ao seu perfil {{response.data.nomeCliente}}</h3>
     </div>
+
+    
+    <div class="lista" style="margin:0 auto">
+        {{>_msg}}
+    </div>
+
     <div class="card" style="width: 50%">
         <div class="cadastro" style="margin-top: 0px;">
 
@@ -66,18 +72,23 @@
             <h3>Pedidos</h3>
         </div>
         <ul class="list-group list-group-flush">
-            {{#each response.data}}
+            {{#each response.listaPedidos}}
             
-            <a href="" style="text-decoration: none;">
-                <li class="list-group-item" style="margin: 5px 10px;
+            <a href="/pedido/find/{{idPedido}}" style="text-decoration: none;">
+                <li class="list-group-item" style=
+                "margin: 5px 10px;
                 border: transparent;">
-                    <div class="row" style="    color: rgb(255, 255, 255);
-    font-weight: 200;
-    font-family: 'Montserrat', sans-serif;
-    margin: 5px 0px;
-    text-align: center;">
+                
+                    <div class="row" style="    
+                    color: rgb(255, 255, 255);
+                    font-weight: 200;
+                    font-family: 'Montserrat', sans-serif;
+                    margin: 5px 0px;
+                    text-align: center;">
+
                         <div class="col"> <strong>Número do Pedido: </strong>{{idPedido}}</div>
-                        <div class="col"><strong>Cliente: </strong>{{nomeCliente}}</div>
+                        <div class="col"><strong>Data: </strong>{{createdAt}}</div>
+
                     </div>
                 </li>
             </a>

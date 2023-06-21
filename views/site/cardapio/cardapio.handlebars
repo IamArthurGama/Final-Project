@@ -1,10 +1,14 @@
 <div class="div-fix-cardapio"></div> <!-- NÂO APAGA PELO AMOR DE DEUS -->
-   {{>_msg}}
+
 <div class="cardapio">
   <h3>Cardápio</h3>
   <hr>
 
 </div>
+
+  <div class="lista" style="margin:0 auto">
+        {{>_msg}}
+    </div>
 <form method="post">
 {{#each response.data}}
 <section id="{{nome}}"> 
