@@ -95,7 +95,6 @@ async function findUser(req, res) {
             responseModel.data = JSON.parse(JSON.stringify(data));
             const listaPedidos = await sequelize.query(`select * from listapedidos where idUsuario = ${responseModel.data.id} group by idPedido`);
             responseModel.listaPedidos = JSON.parse(JSON.stringify(listaPedidos[0]));
-            console.log(responseModel.listaPedidos)
             res.render("site/usuario/perfil", { response: responseModel })    
         } else {
             responseModel.error = "Nenhuma informação foi encontrada!";

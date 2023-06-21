@@ -111,7 +111,6 @@ function final(req,res){
                 delete req.session.cardapio
                 res.render("site/cardapio/telaConfirma")
             }catch(error){
-                console.log(error)
                 res.redirect("/cardapio")
             }
 
