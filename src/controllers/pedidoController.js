@@ -60,7 +60,7 @@ async function findById(req, res) {
 async function list(req, res) {
     criarResponse();
     try{
-        const data = await sequelize.query('select idPedido, nomeCliente from listaPedidos group by idPedido order by createdAt desc;');
+        const data = await sequelize.query('select idPedido, nomeCliente, createdAt from listaPedidos group by idPedido order by createdAt desc;');
         responseModel.success = true;
         responseModel.data = JSON.parse(JSON.stringify(data[0]));
         responseModel.titulo = "Lista de Pedidos"
