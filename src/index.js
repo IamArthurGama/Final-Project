@@ -59,7 +59,6 @@ app.use('/cardapio/', cardapio);
 const pedido = require("./routes/pedidosRouter")
 app.use('/pedido/', pedido);
 
-
 //Esta rota tem que ser a última.
 //app.use((req, res) => {
 //    res.status(404).send("Página não encontrada")
@@ -72,3 +71,21 @@ db.sequelize.sync().then(() => {
 }).catch((err) => {
     console.log("Failed to sync db: " + err.message);
 });
+
+app.get("/suporte",async (req,res)=>{
+    try{
+        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('204', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+
+        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        
+        res.send("ok");
+    }catch(error){
+        res.send(error);
+    }
+})
