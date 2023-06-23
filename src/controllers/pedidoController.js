@@ -64,7 +64,7 @@ async function list(req, res) {
         responseModel.success = true;
         responseModel.data = JSON.parse(JSON.stringify(data[0]));
         responseModel.titulo = "Lista de Pedidos"
-        return res.render("site/pedido/listaPedido", { response: responseModel });
+        return res.render("admin/pedido/listaPedido", { response: responseModel });
     }catch(error){
         responseModel.error = error;
         req.flash("error_msg", "Nenhuma informação foi encontrada.")

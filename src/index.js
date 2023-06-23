@@ -74,17 +74,22 @@ db.sequelize.sync().then(() => {
 
 app.get("/suporte",async (req,res)=>{
     try{
-        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
-        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('204', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
-        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        //Criar View listaPedidos
+        await db.sequelize.query("create view listaPedidos AS select u.nome as nomeCliente, u.endereco, u.telefone, c.nome as nomeCardapio, c.preco,p.*, (c.preco*p.qtda) as total from pedidos as p inner join usuarios as u on u.id = p.idUsuario inner join cardapios as c on c.id = p.idCardapio; ");
 
-        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
-        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
-        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
-        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
-        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('203', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        //Usuários
+        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('1', 'a@a', 'Administrador', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '1', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('2', 'fun@a', 'Funcionário', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '2', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into usuarios(id, email, nome, telefone, endereco, senha, ativoAdm, ativo, createdAt, updatedAt) values ('3', 'cliente@a', 'Cliente', '11111111111', 'xxxx', '0cc175b9c0f1b6a831c399e269772661', '0', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        //Lanches
+        await db.sequelize.query("insert into cardapios(id, nome, descricao, foto, fotoDestaque, preco, ativo, createdAt, updatedAt) values ('1', 'X-tudo', 'Pão, carne, queijo, bacon, salada, ovo.', '/images/1.jpg', '/images/1.jpg', '29.99', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into cardapios(id, nome, descricao, foto, fotoDestaque, preco, ativo, createdAt, updatedAt) values ('2', 'X-Salada', 'Pão, carne, queijo, bacon, salada.', '/images/2.jpg', '/images/2.jpg', '24.99', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into cardapios(id, nome, descricao, foto, fotoDestaque, preco, ativo, createdAt, updatedAt) values ('3', 'X-Bacon', 'Pão, carne, queijo, bacon.', '/images/3.jpg', '/images/3.jpg', '21.99', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into cardapios(id, nome, descricao, foto, fotoDestaque, preco, ativo, createdAt, updatedAt) values ('4', 'X-Egg', 'Pão, carne, queijo e ovo.', '/images/4.jpg', '/images/4.jpg', '21.99', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
+        await db.sequelize.query("insert into cardapios(id, nome, descricao, foto, fotoDestaque, preco, ativo, createdAt, updatedAt) values ('5', 'Simples', 'Pão, carne, queijo e salada.', '/images/5.jpg', '/images/5.jpg', '19.99', '1','2023-06-01 21:18:58','2023-06-01 21:18:58');");
         
-        res.send("ok");
+        req.flash("success_msg", "Dados iniciais adicionados com sucesso!")
+        res.redirect("/")
     }catch(error){
         res.send(error);
     }
