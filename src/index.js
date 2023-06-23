@@ -91,6 +91,7 @@ app.get("/suporte",async (req,res)=>{
         req.flash("success_msg", "Dados iniciais adicionados com sucesso!")
         res.redirect("/")
     }catch(error){
-        res.send(error);
+        req.flash("error_msg", "Alguns dados já foram inseridos!")
+        res.redirect("/")
     }
 })
