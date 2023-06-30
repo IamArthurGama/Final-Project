@@ -243,12 +243,6 @@ function home(req, res) {
             return res.render("./site/cardapio/cardapio", { response: responseModel });
         } else {
             responseModel.error = "Tabela Vazia";
-
-            //////////////////////////////
-
-            ////////////////////////////////criar uma tela de error
-
-            //////////////////////////////
             res.redirect("/usuario/erro")
         }
 
